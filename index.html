@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f4f1de;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            border-bottom: 3px solid #d4af37;
+            border-top: 3px solid #d4af37;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #d4af37;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .ornament {
+            color: #8b4513;
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .book-card {
+            background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 3px solid #d4af37;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-title {
+            font-size: 1.3em;
+            color: #e8d5b7;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-weight: 600;
+            border-left: 4px solid #8b4513;
+            padding-left: 12px;
+        }
+
+        .book-notes {
+            color: #c9b896;
+            line-height: 1.7;
+            font-size: 1.05em;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid #5a7d9a;
+        }
+
+        .loading {
+            text-align: center;
+            color: #d4af37;
+            font-size: 1.5em;
+            padding: 60px;
+        }
+
+        .error {
+            text-align: center;
+            color: #cd5c5c;
+            font-size: 1.2em;
+            padding: 40px;
+            background: rgba(139, 0, 0, 0.2);
+            border: 2px solid #8b0000;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .book-cover {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="ornament">❦</div>
+        <h1>Library</h1>
+        <div class="ornament">❦</div>
+    </div>
+
+    <div class="loading" id="loading">Loading books...</div>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const AIRTABLE_TOKEN = 'patgcptCdYLiIOVgv.d9d2a53cf4d4e96cb9d81781562efa8e007ed5043921b599bf6ebd7ae0cecea3';
+        const BASE_ID = 'app12LraPjbTp4fHG';
+        const TABLE_NAME = 'Books read';
+        const VIEW_NAME = 'All books (pictures)';
+
+        async function fetchBooks() {
+            try {
+                const url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}?view=${encodeURIComponent(VIEW_NAME)}`;
+                
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `Bearer ${AIRTABLE_TOKEN}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch: ${response.status}`);
+                }
+
+                const data = await response.json();
+                displayBooks(data.records);
+            } catch (error) {
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <p>Unable to load books.</p>
+                        <p style="font-size: 0.9em; margin-top: 10px;">Please check your API token and Base ID.</p>
+                    </div>
+                `;
+                console.error('Error:', error);
+            }
+        }
+
+        function displayBooks(records) {
+            const gallery = document.getElementById('gallery');
+            const loading = document.getElementById('loading');
+            
+            loading.style.display = 'none';
+
+            if (records.length === 0) {
+                gallery.innerHTML = '<div class="error">No books found.</div>';
+                return;
+            }
+
+            records.forEach(record => {
+                const fields = record.fields;
+                const card = document.createElement('div');
+                card.className = 'book-card';
+
+                const coverImage = fields['Cover image'] && fields['Cover image'][0] 
+                    ? fields['Cover image'][0].url 
+                    : '';
+
+                const titleAuthor = fields['Title Author'] || 'Untitled';
+                const notes = fields['Notes'] || '';
+
+                card.innerHTML = `
+                    <img src="${coverImage}" alt="${titleAuthor}" class="book-cover">
+                    <div class="book-title">${titleAuthor}</div>
+                    ${notes ? `<div class="book-notes">${notes}</div>` : ''}
+                `;
+
+                gallery.appendChild(card);
+            });
+        }
+
+        fetchBooks();
+    </script>
+</body>
+</html>
