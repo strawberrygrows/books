@@ -42,6 +42,57 @@
             margin: 15px 0;
         }
 
+        .setup-prompt {
+            max-width: 700px;
+            margin: 40px auto;
+            background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .setup-prompt h2 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .setup-prompt p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #c9b896;
+        }
+
+        .setup-prompt input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 2px solid #8b4513;
+            border-radius: 4px;
+            background: #16213e;
+            color: #f4f1de;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+
+        .setup-prompt button {
+            background: #8b4513;
+            color: #f4f1de;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Garamond', 'Georgia', serif;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .setup-prompt button:hover {
+            background: #a0632a;
+        }
+
         .gallery {
             max-width: 1400px;
             margin: 0 auto;
@@ -114,6 +165,10 @@
             margin: 0 auto;
         }
 
+        .hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -137,26 +192,59 @@
         <div class="ornament">❦</div>
     </div>
 
-    <div class="loading" id="loading">Loading books...</div>
-    <div class="gallery" id="gallery"></div>
+    <div class="setup-prompt" id="setupPrompt">
+        <h2>First Time Setup</h2>
+        <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
+        <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
+        <button onclick="saveToken()">Save Token</button>
+        <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
+            Your token is stored locally in your browser only. No one else can access it.
+        </p>
+    </div>
+
+    <div class="loading hidden" id="loading">Loading books...</div>
+    <div class="gallery hidden" id="gallery"></div>
 
     <script>
-        const AIRTABLE_TOKEN = 'patgcptCdYLiIOVgv.d9d2a53cf4d4e96cb9d81781562efa8e007ed5043921b599bf6ebd7ae0cecea3';
         const BASE_ID = 'app12LraPjbTp4fHG';
         const TABLE_NAME = 'Books read';
         const VIEW_NAME = 'All books (pictures)';
 
+        function saveToken() {
+            const token = document.getElementById('tokenInput').value.trim();
+            if (!token) {
+                alert('Please enter a token');
+                return;
+            }
+            localStorage.setItem('airtable_token', token);
+            document.getElementById('setupPrompt').classList.add('hidden');
+            fetchBooks();
+        }
+
         async function fetchBooks() {
+            const token = localStorage.getItem('airtable_token');
+            
+            if (!token) {
+                document.getElementById('setupPrompt').classList.remove('hidden');
+                return;
+            }
+
+            document.getElementById('loading').classList.remove('hidden');
+
             try {
                 const url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}?view=${encodeURIComponent(VIEW_NAME)}`;
                 
                 const response = await fetch(url, {
                     headers: {
-                        'Authorization': `Bearer ${AIRTABLE_TOKEN}`
+                        'Authorization': `Bearer ${token}`
                     }
                 });
 
                 if (!response.ok) {
+                    if (response.status === 401) {
+                        localStorage.removeItem('airtable_token');
+                        throw new Error('Invalid token. Please try again.');
+                    }
                     throw new Error(`Failed to fetch: ${response.status}`);
                 }
 
@@ -165,8 +253,8 @@
             } catch (error) {
                 document.getElementById('loading').innerHTML = `
                     <div class="error">
-                        <p>Unable to load books.</p>
-                        <p style="font-size: 0.9em; margin-top: 10px;">Please check your API token and Base ID.</p>
+                        <p>${error.message}</p>
+                        <button onclick="location.reload()" style="margin-top: 15px; padding: 10px 20px; background: #8b4513; color: #f4f1de; border: none; border-radius: 4px; cursor: pointer;">Try Again</button>
                     </div>
                 `;
                 console.error('Error:', error);
@@ -177,7 +265,8 @@
             const gallery = document.getElementById('gallery');
             const loading = document.getElementById('loading');
             
-            loading.style.display = 'none';
+            loading.classList.add('hidden');
+            gallery.classList.remove('hidden');
 
             if (records.length === 0) {
                 gallery.innerHTML = '<div class="error">No books found.</div>';
@@ -206,7 +295,14 @@
             });
         }
 
-        fetchBooks();
+        // Check if token exists on page load
+        window.onload = function() {
+            const token = localStorage.getItem('airtable_token');
+            if (token) {
+                document.getElementById('setupPrompt').classList.add('hidden');
+                fetchBooks();
+            }
+        };
     </script>
 </body>
 </html>
