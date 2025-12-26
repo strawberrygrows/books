@@ -15,16 +15,22 @@
             font-family: 'Garamond', 'Georgia', serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: #f4f1de;
-            padding: 40px 20px;
+            padding: 40px 0;
             min-height: 100vh;
+        }
+
+        .container {
+            max-width: 50%;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .header {
             text-align: center;
             margin-bottom: 60px;
             padding: 30px;
-            border-bottom: 3px solid #d4af37;
-            border-top: 3px solid #d4af37;
+            border-bottom: 1px solid #d4af37;
+            border-top: 1px solid #d4af37;
         }
 
         h1 {
@@ -46,10 +52,9 @@
             max-width: 700px;
             margin: 40px auto;
             background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-            border: 2px solid #d4af37;
-            border-radius: 8px;
+            border: 1px solid #d4af37;
             padding: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .setup-prompt h2 {
@@ -68,8 +73,7 @@
             width: 100%;
             padding: 12px;
             font-size: 1em;
-            border: 2px solid #8b4513;
-            border-radius: 4px;
+            border: 1px solid #8b4513;
             background: #16213e;
             color: #f4f1de;
             font-family: monospace;
@@ -82,7 +86,6 @@
             border: none;
             padding: 12px 30px;
             font-size: 1.1em;
-            border-radius: 4px;
             cursor: pointer;
             font-family: 'Garamond', 'Georgia', serif;
             transition: background 0.3s ease;
@@ -94,36 +97,26 @@
         }
 
         .gallery {
-            max-width: 1400px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px;
-            padding: 20px;
+            padding: 20px 0;
         }
 
         .book-card {
             background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-            border: 2px solid #8b4513;
-            border-radius: 8px;
+            border: 1px solid #8b4513;
             padding: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .book-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .book-cover {
             width: 100%;
             height: 400px;
             object-fit: cover;
-            border: 3px solid #d4af37;
-            border-radius: 4px;
+            border: 1px solid #d4af37;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         }
 
         .book-title {
@@ -132,7 +125,7 @@
             margin-bottom: 15px;
             line-height: 1.4;
             font-weight: 600;
-            border-left: 4px solid #8b4513;
+            border-left: 2px solid #8b4513;
             padding-left: 12px;
         }
 
@@ -142,8 +135,7 @@
             font-size: 1.05em;
             background: rgba(0, 0, 0, 0.2);
             padding: 15px;
-            border-radius: 4px;
-            border-left: 3px solid #5a7d9a;
+            border-left: 1px solid #5a7d9a;
         }
 
         .loading {
@@ -159,8 +151,7 @@
             font-size: 1.2em;
             padding: 40px;
             background: rgba(139, 0, 0, 0.2);
-            border: 2px solid #8b0000;
-            border-radius: 8px;
+            border: 1px solid #8b0000;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -170,6 +161,10 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+            
             h1 {
                 font-size: 2em;
             }
@@ -186,24 +181,26 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="ornament">❦</div>
-        <h1>Library</h1>
-        <div class="ornament">❦</div>
-    </div>
+    <div class="container">
+        <div class="header">
+            <div class="ornament">❦</div>
+            <h1>Library</h1>
+            <div class="ornament">❦</div>
+        </div>
 
-    <div class="setup-prompt" id="setupPrompt">
-        <h2>First Time Setup</h2>
-        <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
-        <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
-        <button onclick="saveToken()">Save Token</button>
-        <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
-            Your token is stored locally in your browser only. No one else can access it.
-        </p>
-    </div>
+        <div class="setup-prompt" id="setupPrompt">
+            <h2>First Time Setup</h2>
+            <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
+            <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
+            <button onclick="saveToken()">Save Token</button>
+            <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
+                Your token is stored locally in your browser only. No one else can access it.
+            </p>
+        </div>
 
-    <div class="loading hidden" id="loading">Loading books...</div>
-    <div class="gallery hidden" id="gallery"></div>
+        <div class="loading hidden" id="loading">Loading books...</div>
+        <div class="gallery hidden" id="gallery"></div>
+    </div>
 
     <script>
         const BASE_ID = 'app12LraPjbTp4fHG';
@@ -282,7 +279,7 @@
                     ? fields['Cover image'][0].url 
                     : '';
 
-                const titleAuthor = fields['Title Author'] || 'Untitled';
+                const titleAuthor = fields['Title author'] || 'Untitled';
                 const notes = fields['Notes'] || '';
 
                 card.innerHTML = `
