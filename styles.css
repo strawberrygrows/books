@@ -221,3 +221,35 @@
                 height: 350px;
             }
         } 
+
+
+
+ /* LIST FORMAT STYLES */
+.book-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.list-item {
+    background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
+    border: 1px solid #8b4513;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.list-title {
+    font-size: 1.1em;
+    color: #e8d5b7;
+    margin-bottom: 12px;
+    font-weight: 600;
+    border-left: 2px solid #8b4513;
+    padding-left: 12px;
+}
+
+.list-notes {
+    color: #c9b896;
+    line-height: 1.6;
+    font-size: 0.95em;
+    padding-left: 14px;
+}
