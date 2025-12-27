@@ -3,42 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books I recommend</title>
-   <link rel="stylesheet" href="styles.css">
-
+    <title>Rachel's Library</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-   <div class="header">
-    <div class="ornament">✦ ✦ ✦</div>
-    <h1>Rachel's Library</h1>
-    <div class="tagline">Books I recommend</div>  <!-- change per page as you like -->
-
-    <!-- Empty nav; JS will fill this -->
-    <nav class="nav-links"></nav>
-</div>
-
-        <div class="setup-prompt" id="setupPrompt">
-            <h2>First Time Setup</h2>
-            <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
-            <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
-            <button onclick="saveToken()">Save Token</button>
-            <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
-                Your token is stored locally in your browser only. No one else can access it.
-            </p>
+        <div class="header">
+            <div class="ornament">✦ ✦ ✦</div>
+            <h1>Rachel's Library</h1>
+            <div class="nav-links"></div>
         </div>
 
-        <div class="loading hidden" id="loading">Loading books...</div>
-<div
-    class="gallery hidden"
-    id="gallery"
-    data-table-name="Books read"
-    data-view-name="Recommended"
-></div>
+        <!-- The gallery div with data attributes for which table/view to load -->
+        <div id="gallery" class="gallery hidden" data-table-name="Books read" data-view-name="Recommended"></div>
+    </div>
 
- <script src="library.js"></script>
-</body>
-</html>
-
+    <script src="library.js"></script>
 </body>
 </html>
