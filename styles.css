@@ -230,8 +230,8 @@
 }
 
 .list-view .book-card {
-    background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-    border: 1px solid #8b4513;
+    background: linear-gradient(145deg, #2d3561 0%, #1f2544 0%);
+    border: 0px solid #8b4513;
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 4px;
