@@ -1,5 +1,45 @@
 const BASE_ID = 'app12LraPjbTp4fHG';
 
+function buildNav() {
+    const nav = document.querySelector('.nav-links');
+    if (!nav) return; // in case you have a page without a header
+
+    const links = [
+        { href: 'index.html', label: 'Books I read in 2025' },
+        { href: 'recommend.html', label: 'Books I recommend' }
+        // add more pages here later!
+    ];
+
+    // Work out which page we're on (e.g. "index.html")
+    let current = window.location.pathname.split('/').pop();
+    if (current === '' || current === null) {
+        current = 'index.html';
+    }
+
+    // Clear anything that might be inside nav
+    nav.innerHTML = '';
+
+    links.forEach((link, index) => {
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = link.label;
+
+        if (link.href === current) {
+            a.classList.add('active');
+        }
+
+        nav.appendChild(a);
+
+        // Add a separator dot between links (not after the last one)
+        if (index < links.length - 1) {
+            const sep = document.createElement('span');
+            sep.textContent = ' · ';
+            nav.appendChild(sep);
+        }
+    });
+}
+
+
 // Get Airtable config (table + view) from data attributes on the gallery element
 function getAirtableConfig() {
     const gallery = document.getElementById('gallery');
