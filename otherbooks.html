@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Books - Rachel's Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="ornament">✦ ✦ ✦</div>
+            <h1>Rachel's Library</h1>
+            <div class="nav-links"></div>
+        </div>
+
+        <div class="setup-prompt hidden" id="setupPrompt">
+            <h2>First Time Setup</h2>
+            <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
+            <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
+            <button id="saveTokenButton">Save Token</button>
+            <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
+                Your token is stored locally in your browser only. No one else can access it.
+            </p>
+        </div>
+
+        <div class="loading hidden" id="loading">Loading books...</div>
+        
+        <div id="gallery" class="hidden" data-table-name="Books read" data-view-name="Other books"></div>
+    </div>
+
+    <script src="library.js"></script>
+    <script>
+        // Override the display function for list format
+        function displayBooks(records) {
+            const bookList = document.getElementById('bookList');
+            const loading = document.getElementById('loading');
+
+            loading.classList.add('hidden');
+            bookList.classList.remove('hidden');
+
+            bookList.innerHTML = '';
+
+            if (!records || records.length === 0) {
+                bookList.innerHTML = '<div class="error">No books found.</div>';
+                return;
+            }
+
+            records.forEach(record => {
+                const fields = record.fields;
+                
+                const titleAuthor = fields['Title author'] || 'Untitled';
+                const notes = fields['Notes'] || '';
+
+                const item = document.createElement('div');
+                item.className = 'list-item';
+
+                const titleEl = document.createElement('div');
+                titleEl.className = 'list-title';
+                titleEl.textContent = titleAuthor;
+
+                item.appendChild(titleEl);
+
+                if (notes) {
+                    const notesEl = document.createElement('div');
+                    notesEl.className = 'list-notes';
+                    notesEl.textContent = notes;
+                    item.appendChild(notesEl);
+                }
+
+                bookList.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>
