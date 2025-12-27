@@ -122,13 +122,22 @@
     gap: 20px;         /* fixed space between rows and columns */
     padding: 20px 0;
 }
+/* BOOK CARD — adjustable, clean, no border, transparent background */
 
 .book-card {
-    background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-    border: 1px solid #8b4513;
-    padding: 20px;     /* fixed space between border and content */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* ↓ Background is transparent for now */
+    background: transparent; 
+    /* To change later, replace with: background: var(--card-bg, rgba(0,0,0,0.2)); */
+
+    /* ↓ Border removed — re-enable whenever you want */
+    /* border: 1px solid var(--card-border, #8b4513); */
+
+    border-radius: 10px;       /* keep or adjust */
+    padding: 20px;
+    box-shadow: none;          /* keep cards flat; restore if desired */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 .book-cover {
     width: 100%;
