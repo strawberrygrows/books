@@ -370,7 +370,7 @@
 
 /* IMAGE BLOCK STYLES */
 .image-block {
-    margin: 40px auto;
+    margin: 20px auto;
     max-width: 600px;
 }
 
@@ -384,7 +384,7 @@
 .image-caption {
     margin-top: 10px;
     color: #c9b896;
-    font-size: 0.9em;
+    font-size: 0.75em;
     font-style: italic;
     text-align: center;
     line-height: 1.5;
