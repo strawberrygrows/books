@@ -169,7 +169,7 @@
 
         .book-link {
             margin-top: 12px;
-            font-size: 0.8em;
+            font-size: 0.75em;
         }
 
         .book-link a {
@@ -294,7 +294,7 @@
         .block p {
             color: #c9b896;
             line-height: 1.7;
-            font-size: 0.95em;
+            font-size: 0.75em;
             margin-bottom: 15px;
         }
 
@@ -307,7 +307,7 @@
         .block li {
             color: #c9b896;
             line-height: 1.8;
-            font-size: 0.95em;
+            font-size: 0.75em;
             padding-left: 15px;
             position: relative;
         }
