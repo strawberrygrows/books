@@ -151,6 +151,23 @@
             border-left: 1px solid #5a7d9a;
         }
 
+        .book-link {
+            margin-top: 12px;
+            font-size: 0.8em;
+        }
+
+        .book-link a {
+            color: #d4af37;
+            text-decoration: none;
+            border-bottom: 1px solid #d4af37;
+            transition: color 0.2s ease;
+        }
+
+        .book-link a:hover {
+            color: #e8d5b7;
+            border-bottom-color: #e8d5b7;
+        }
+
         .loading {
             text-align: center;
             color: #d4af37;
@@ -294,11 +311,14 @@
 
                 const titleAuthor = fields['Title author'] || 'Untitled';
                 const notes = fields['Notes'] || '';
+                const linkURL = fields['Link URL'] || '';
+                const linkText = fields['Link text'] || '';
 
                 card.innerHTML = `
                     <img src="${coverImage}" alt="${titleAuthor}" class="book-cover">
                     <div class="book-title">${titleAuthor}</div>
                     ${notes ? `<div class="book-notes">${notes}</div>` : ''}
+                    ${linkURL && linkText ? `<div class="book-link"><a href="${linkURL}" target="_blank" rel="noopener noreferrer">${linkText} →</a></div>` : ''}
                 `;
 
                 gallery.appendChild(card);
