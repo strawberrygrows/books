@@ -5,43 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Other Books - Rachel's Library</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Override gallery grid to show as a list */
-        #gallery {
-            display: block;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Style book cards as list items */
-        #gallery .book-card {
-            background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-            border: 1px solid #8b4513;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            display: block;
-        }
-
-        /* Hide book covers on this page */
-        #gallery .book-cover {
-            display: none;
-        }
-
-        /* Adjust title styling for list */
-        #gallery .book-title {
-            font-size: 1.1em;
-            margin-bottom: 12px;
-        }
-
-        /* Adjust notes styling for list */
-        #gallery .book-notes {
-            font-size: 0.95em;
-            padding-left: 14px;
-        }
-    </style>
 </head>
-<body>
+<body class="list-view">
     <div class="container">
         <div class="header">
             <div class="ornament">✦ ✦ ✦</div>
@@ -49,19 +14,7 @@
             <div class="nav-links"></div>
         </div>
 
-        <div class="setup-prompt hidden" id="setupPrompt">
-            <h2>First Time Setup</h2>
-            <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
-            <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
-            <button id="saveTokenButton">Save Token</button>
-            <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
-                Your token is stored locally in your browser only. No one else can access it.
-            </p>
-        </div>
-
-        <div class="loading hidden" id="loading">Loading books...</div>
-        
-        <div id="gallery" class="hidden" data-table-name="Books read" data-view-name="Other books"></div>
+        <div id="gallery" class="gallery hidden" data-table-name="Books read" data-view-name="Other books"></div>
     </div>
 
     <script src="library.js"></script>
