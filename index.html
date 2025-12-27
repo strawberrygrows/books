@@ -20,7 +20,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
         }
@@ -31,7 +31,7 @@
             padding: 30px 0;
             border-bottom: 1px solid #d4af37;
             border-top: 1px solid #d4af37;
-            max-width: 1200px;
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -81,7 +81,7 @@
         }
 
         .setup-prompt input {
-            width: 90%;
+            width: 100%;
             padding: 12px;
             font-size: 1em;
             border: 1px solid #8b4513;
@@ -119,11 +119,11 @@
             border: 1px solid #8b4513;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            width: 90%;
+            width: 100%;
         }
 
         .book-cover {
-            width: 90%;
+            width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
             border: 1px solid #d4af37;
@@ -149,6 +149,23 @@
             background: rgba(0, 0, 0, 0.2);
             padding: 12px;
             border-left: 1px solid #5a7d9a;
+        }
+
+        .book-link {
+            margin-top: 12px;
+            font-size: 0.8em;
+        }
+
+        .book-link a {
+            color: #d4af37;
+            text-decoration: none;
+            border-bottom: 1px solid #d4af37;
+            transition: color 0.2s ease;
+        }
+
+        .book-link a:hover {
+            color: #e8d5b7;
+            border-bottom-color: #e8d5b7;
         }
 
         .loading {
@@ -294,11 +311,14 @@
 
                 const titleAuthor = fields['Title author'] || 'Untitled';
                 const notes = fields['Notes'] || '';
+                const linkURL = fields['Link URL'] || '';
+                const linkText = fields['Link text'] || '';
 
                 card.innerHTML = `
                     <img src="${coverImage}" alt="${titleAuthor}" class="book-cover">
                     <div class="book-title">${titleAuthor}</div>
                     ${notes ? `<div class="book-notes">${notes}</div>` : ''}
+                    ${linkURL && linkText ? `<div class="book-link"><a href="${linkURL}" target="_blank" rel="noopener noreferrer">${linkText} →</a></div>` : ''}
                 `;
 
                 gallery.appendChild(card);
