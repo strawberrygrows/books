@@ -257,3 +257,106 @@
 .list-view .book-link {
     display: none;
 }
+
+
+
+ 
+        .blocks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .block {
+            background: transparent;
+            border: 0px solid #8b4513;
+            padding: 30px;
+            transition: transform 0.2s ease;
+        }
+
+        .block:hover {
+            transform: translateY(-3px);
+        }
+
+        .block h2 {
+            color: #d4af37;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            font-weight: 300;
+            border-bottom: 1px solid #8b4513;
+            padding-bottom: 10px;
+        }
+
+        .block p {
+            color: #c9b896;
+            line-height: 1.7;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .block ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .block li {
+            color: #c9b896;
+            line-height: 1.8;
+            font-size: 0.95em;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .block li:before {
+            content: "•";
+            color: #8b4513;
+            position: absolute;
+            left: 0;
+        }
+
+        .block a {
+            color: #d4af37;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .block a:hover {
+            border-bottom-color: #d4af37;
+        }
+
+        .full-width-block {
+            grid-column: 1 / -1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #d4af37;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid #8b4513;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+
+        @media (max-width: 768px) {
+            .blocks-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    
