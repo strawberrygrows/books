@@ -359,4 +359,28 @@
                 grid-template-columns: 1fr;
             }
         }
-    
+
+
+
+
+/* IMAGE BLOCK STYLES */
+.image-block {
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #8b4513;
+    display: block;
+}
+
+.image-caption {
+    margin-top: 10px;
+    color: #c9b896;
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.5;
+}
