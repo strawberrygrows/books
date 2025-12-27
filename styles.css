@@ -221,7 +221,6 @@
                 height: 350px;
             }
         } 
-
 /* LIST PAGE STYLES */
 .list-view #gallery {
     display: block;
@@ -230,11 +229,10 @@
 }
 
 .list-view .book-card {
-    background: linear-gradient(145deg, #2d3561 0%, #1f2544 0%);
-    border: 0px solid #8b4513;
+    background: transparent;
+    border: none;
     padding: 20px;
     margin-bottom: 15px;
-    border-radius: 4px;
     display: block;
 }
 
