@@ -185,9 +185,11 @@ function showError(message) {
         location.reload();
     });
 }
-
 // Setup on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // build the header nav on every page
+    buildNav();
+
     const saveButton = document.getElementById('saveTokenButton');
     if (saveButton) {
         saveButton.addEventListener('click', saveToken);
@@ -199,3 +201,4 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchBooks();
     }
 });
+
