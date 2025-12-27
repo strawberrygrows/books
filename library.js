@@ -8,6 +8,8 @@ function buildNav() {
         { href: 'index.html', label: '2025' },
         { href: '2024.html', label: '2024' },
         { href: 'recommend.html', label: 'Books I recommend' }
+        { href: 'other.html', label: 'Other books' }
+
         // add more pages here later!
     ];
 
