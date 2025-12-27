@@ -5,8 +5,10 @@ function buildNav() {
     if (!nav) return; // in case you have a page without a header
 
     const links = [
-        { href: 'index.html', label: 'Books I read in 2025' },
+        { href: 'index.html', label: '2025' },
         { href: 'recommend.html', label: 'Books I recommend' }
+        { href: '2024.html', label: '2024' }
+
         // add more pages here later!
     ];
 
