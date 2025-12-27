@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books I recommend</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f4f1de;
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px 0;
+            border-bottom: 1px solid #d4af37;
+            border-top: 1px solid #d4af37;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline {
+            color: #8b4513;
+            font-size: 1em;
+            font-style: italic;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #d4af37;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .ornament {
+            color: #8b4513;
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+
+        .setup-prompt {
+            max-width: 700px;
+            margin: 40px auto;
+            background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
+            border: 1px solid #d4af37;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .setup-prompt h2 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .setup-prompt p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: #c9b896;
+        }
+
+        .setup-prompt input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #8b4513;
+            background: #16213e;
+            color: #f4f1de;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+
+        .setup-prompt button {
+            background: #8b4513;
+            color: #f4f1de;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-family: 'Garamond', 'Georgia', serif;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .setup-prompt button:hover {
+            background: #a0632a;
+        }
+
+        .gallery {
+    display: grid;
+    gap: 18px;
+    padding: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .book-card {
+            background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
+            border: 1px solid #8b4513;
+            padding: 18px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border: 1px solid #d4af37;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            filter: brightness(0.85) contrast(1.1) saturate(0.8);
+        }
+
+        .book-title {
+            font-size: 0.85em;
+            color: #e8d5b7;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            font-weight: 600;
+            border-left: 2px solid #8b4513;
+            padding-left: 10px;
+        }
+
+        .book-notes {
+            color: #c9b896;
+            line-height: 1.5;
+            font-size: 0.75em;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            border-left: 1px solid #5a7d9a;
+        }
+
+        .book-link {
+            margin-top: 12px;
+            font-size: 0.8em;
+        }
+
+        .book-link a {
+            color: #d4af37;
+            text-decoration: none;
+            border-bottom: 1px solid #d4af37;
+            transition: color 0.2s ease;
+        }
+
+        .book-link a:hover {
+            color: #e8d5b7;
+            border-bottom-color: #e8d5b7;
+        }
+
+        .loading {
+            text-align: center;
+            color: #d4af37;
+            font-size: 1.5em;
+            padding: 60px;
+        }
+
+        .error {
+            text-align: center;
+            color: #cd5c5c;
+            font-size: 1.2em;
+            padding: 40px;
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid #8b0000;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+           
+            
+            .book-cover {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="ornament">✦ ✦ ✦</div>
+            <h1>Rachel's Library</h1>
+            <div class="tagline">Books I recommend</div>
+        </div>
+
+        <div class="setup-prompt" id="setupPrompt">
+            <h2>First Time Setup</h2>
+            <p>To display your books, please enter your Airtable Personal Access Token. This will be saved securely in your browser and never shared.</p>
+            <input type="password" id="tokenInput" placeholder="Enter your Airtable token here">
+            <button onclick="saveToken()">Save Token</button>
+            <p style="font-size: 0.9em; margin-top: 15px; color: #8b4513;">
+                Your token is stored locally in your browser only. No one else can access it.
+            </p>
+        </div>
+
+        <div class="loading hidden" id="loading">Loading books...</div>
+        <div class="gallery hidden" id="gallery"></div>
+    </div>
+
+    <script>
+        const BASE_ID = 'app12LraPjbTp4fHG';
+        const TABLE_NAME = 'Books read';
+        const VIEW_NAME = 'Books I recommend';
+
+        function saveToken() {
+            const token = document.getElementById('tokenInput').value.trim();
+            if (!token) {
+                alert('Please enter a token');
+                return;
+            }
+            localStorage.setItem('airtable_token', token);
+            document.getElementById('setupPrompt').classList.add('hidden');
+            fetchBooks();
+        }
+
+        async function fetchBooks() {
+            const token = localStorage.getItem('airtable_token');
+            
+            if (!token) {
+                document.getElementById('setupPrompt').classList.remove('hidden');
+                return;
+            }
+
+            document.getElementById('loading').classList.remove('hidden');
+
+            try {
+                const url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}?view=${encodeURIComponent(VIEW_NAME)}`;
+                
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        localStorage.removeItem('airtable_token');
+                        throw new Error('Invalid token. Please try again.');
+                    }
+                    throw new Error(`Failed to fetch: ${response.status}`);
+                }
+
+                const data = await response.json();
+                displayBooks(data.records);
+            } catch (error) {
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <p>${error.message}</p>
+                        <button onclick="location.reload()" style="margin-top: 15px; padding: 10px 20px; background: #8b4513; color: #f4f1de; border: none; border-radius: 4px; cursor: pointer;">Try Again</button>
+                    </div>
+                `;
+                console.error('Error:', error);
+            }
+        }
+
+        function displayBooks(records) {
+            const gallery = document.getElementById('gallery');
+            const loading = document.getElementById('loading');
+            
+            loading.classList.add('hidden');
+            gallery.classList.remove('hidden');
+
+            if (records.length === 0) {
+                gallery.innerHTML = '<div class="error">No books found.</div>';
+                return;
+            }
+
+            records.forEach(record => {
+                const fields = record.fields;
+                const card = document.createElement('div');
+                card.className = 'book-card';
+
+                const coverImage = fields['Cover image'] && fields['Cover image'][0] 
+                    ? fields['Cover image'][0].url 
+                    : '';
+
+                const titleAuthor = fields['Title author'] || 'Untitled';
+                const notes = fields['Notes'] || '';
+                const linkURL = fields['Link URL'] || '';
+                const linkText = fields['Link text'] || '';
+
+                card.innerHTML = `
+                    <img src="${coverImage}" alt="${titleAuthor}" class="book-cover">
+                    <div class="book-title">${titleAuthor}</div>
+                    ${notes ? `<div class="book-notes">${notes}</div>` : ''}
+                    ${linkURL && linkText ? `<div class="book-link"><a href="${linkURL}" target="_blank" rel="noopener noreferrer">${linkText} →</a></div>` : ''}
+                `;
+
+                gallery.appendChild(card);
+            });
+        }
+
+        // Check if token exists on page load
+        window.onload = function() {
+            const token = localStorage.getItem('airtable_token');
+            if (token) {
+                document.getElementById('setupPrompt').classList.add('hidden');
+                fetchBooks();
+            }
+        };
+    </script>
+</body>
+</html>
