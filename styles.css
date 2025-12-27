@@ -116,31 +116,29 @@
         .setup-prompt button:hover {
             background: #a0632a;
         }
-
-        .gallery {
+.gallery {
     display: grid;
-    gap: 18px;
-    padding: 20px 0;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
+    gap: 20px;         /* fixed space between rows and columns */
+    padding: 20px 0;
+}
 
-        .book-card {
-            background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-            border: 1px solid #8b4513;
-            padding: 18px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            width: 100%;
-        }
+.book-card {
+    background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
+    border: 1px solid #8b4513;
+    padding: 20px;     /* fixed space between border and content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-        .book-cover {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border: 1px solid #d4af37;
-            margin-bottom: 14px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-            filter: brightness(0.85) contrast(1.1) saturate(0.8);
-        }
+.book-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid #d4af37;
+    margin-bottom: 20px;  /* space below image */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
 
         .book-title {
             font-size: 0.85em;
