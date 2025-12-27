@@ -5,6 +5,7 @@ function buildNav() {
     if (!nav) return;
 
     const links = [
+        { href: 'about.html', label: 'About' },
         { href: 'index.html', label: 'Recs' },
         { href: '2025.html', label: '2025' },
         { href: '2024.html', label: '2024' },
