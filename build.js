@@ -1,11 +1,12 @@
 // build.js
 // Generate fully static HTML pages using Airtable data.
-// The browser makes ZERO Airtable calls. Everything is pre-rendered.
 
 const fs = require('fs');
 
 const BASE_ID = 'app12LraPjbTp4fHG';
 const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
+
+// Read the shared header partial once
 const header = fs.readFileSync('partials/header.html', 'utf8');
 
 // Require a token
@@ -15,14 +16,14 @@ if (!AIRTABLE_TOKEN) {
 }
 
 // ---- PAGES TO GENERATE ----
-// Make sure these view names match your Airtable base exactly.
+// Adjust view names / filenames if needed.
 const PAGES = [
   {
     file: 'index.html',
     table: 'Books read',
     view: 'Recommended',
     title: "Rachel's Library — Recommendations",
-    heading: 'Books I recommend',
+    heading: 'Top recs',
     isList: false,
   },
   {
@@ -41,12 +42,23 @@ const PAGES = [
     heading: 'Books I read in 2024',
     isList: false,
   },
+  // If you've renamed "Other books" page to library.html:
   {
-    file: 'other.html',
+    file: 'library.html',               // was other.html previously
     table: 'Books read',
     view: 'Other books',
-    title: "Rachel's Library — Other Books",
-    heading: 'Other books',
+    title: "Rachel's Library — Library",
+    heading: 'Library',
+    isList: true,
+  },
+  // Anti-Library placeholder: create a view in Airtable when ready
+  // or point it at some view that already exists.
+  {
+    file: 'anti-library.html',
+    table: 'Books read',
+    view: 'Anti-Library',               // make sure this view exists in Airtable
+    title: "Rachel's Library — Anti-Library",
+    heading: 'Anti-Library',
     isList: true,
   },
 ];
@@ -111,16 +123,6 @@ function generateBookCard(record) {
   return card;
 }
 
-// ---- Build the navigation bar (same on every page) ----
-function generateNav() {
-  return `
-    <a href="index.html">Books I recommend</a>
-    <a href="2025.html">Books I read in 2025</a>
-    <a href="2024.html">Books I read in 2024</a>
-    <a href="other.html">Other books</a>
-  `;
-}
-
 // ---- Construct the full HTML page ----
 function generateHTML(page, booksHTML) {
   const { title, heading, isList } = page;
@@ -136,18 +138,10 @@ function generateHTML(page, booksHTML) {
 </head>
 <body${bodyClass}>
   <div class="container">
-    <div class="header">
-      <div class="ornament">✦ ✦ ✦</div>
-      <h1>Rachel's Library</h1>
-      <div class="nav-links">
-        ${generateNav()}
-      </div>
-    </div>
-
+    ${header}
     <div class="page-heading">
       <h2>${escapeHtml(heading)}</h2>
     </div>
-
     <div id="gallery" class="gallery">
       ${booksHTML}
     </div>
