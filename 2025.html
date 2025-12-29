@@ -9,22 +9,47 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="ornament">✦ ✦ ✦</div>
-      <h1>Rachel's Library</h1>
+  <div class="ornament">✦ ✦ ✦</div>
+  <h1>Rachel's Library</h1>
+
+  <nav class="nav-sections">
+
+    <!-- BOOKS -->
+    <div class="nav-group">
+      <div class="nav-heading">Books</div>
       <div class="nav-links">
-        
-    <a href="index.html">Books I recommend</a>
-    <a href="2025.html">Books I read in 2025</a>
-    <a href="2024.html">Books I read in 2024</a>
-    <a href="other.html">Other books</a>
-  
+        <a href="index.html">Top recs</a>
+        <a href="2024.html">2024</a>
+        <a href="2025.html">2025</a>
+        <a href="library.html">Library</a>
+        <a href="anti-library.html">Anti-Library</a>
       </div>
     </div>
+
+    <!-- GENERAL -->
+    <div class="nav-group">
+      <div class="nav-heading">General</div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+<!-- Add this tiny script to apply the active class -->
+<script>
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === here) {
+      a.classList.add('active');
+    }
+  });
+</script>
 
     <div class="page-heading">
       <h2>Books I read in 2025</h2>
     </div>
-
     <div id="gallery" class="gallery">
       <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/4xWp06kd5NGviLn3gmGTrw/dwUg385myzFJo9fHdiVF-eIe3nZePsqMAqZq5b3-M1x0DbTnGdzrt5hrLMRV6SFpu4Ho1szx5r5lQGrBmR96_WvdEanfwItZqwSMV4u50h5esg19VvhFa7Pl17UO2PX11zUXbeGhLQDimMi_q1errg/IMDI0cuMvWbdwgmDknj2zQVNJgNm3GmV7OEEewvmkaM" alt="Cover of Meditations, by Marcus Aurelius" class="book-cover" loading="lazy"><div class="book-title">Meditations, by Marcus Aurelius</div><div class="book-notes">Actually very dull</div></div>
       <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/Zf5A_ULHRaimDMvUwpam0w/rAZNhr5aGlM_6P1d2-dBAzWxNHwa8eg1S4U8VcnDgJInSUuk8xc6nFngm3oqZf3hS2vLZiechSZVQCpLAugfXa3_qtasXZYXVMz9OJhEE4gSKeYaygcqT_FsoJZG1Gr8z5j8M5uBNtIle5XwNuksrObCzTApJ9uvL3K_YMvNtw8/2HSJqJ-LfCItd6z8ey1hDNgFpXwGIACudaahX3S5WrU" alt="Cover of On the Shortness of Life, by Seneca" class="book-cover" loading="lazy"><div class="book-title">On the Shortness of Life, by Seneca</div><div class="book-notes">Nicely phrased</div></div>

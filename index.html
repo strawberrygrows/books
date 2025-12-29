@@ -9,22 +9,47 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="ornament">✦ ✦ ✦</div>
-      <h1>Rachel's Library</h1>
+  <div class="ornament">✦ ✦ ✦</div>
+  <h1>Rachel's Library</h1>
+
+  <nav class="nav-sections">
+
+    <!-- BOOKS -->
+    <div class="nav-group">
+      <div class="nav-heading">Books</div>
       <div class="nav-links">
-        
-    <a href="index.html">Books I recommend</a>
-    <a href="2025.html">Books I read in 2025</a>
-    <a href="2024.html">Books I read in 2024</a>
-    <a href="other.html">Other books</a>
-  
+        <a href="index.html">Top recs</a>
+        <a href="2024.html">2024</a>
+        <a href="2025.html">2025</a>
+        <a href="library.html">Library</a>
+        <a href="anti-library.html">Anti-Library</a>
       </div>
     </div>
 
-    <div class="page-heading">
-      <h2>Books I recommend</h2>
+    <!-- GENERAL -->
+    <div class="nav-group">
+      <div class="nav-heading">General</div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+      </div>
     </div>
 
+  </nav>
+</div>
+
+<!-- Add this tiny script to apply the active class -->
+<script>
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === here) {
+      a.classList.add('active');
+    }
+  });
+</script>
+
+    <div class="page-heading">
+      <h2>Top recs</h2>
+    </div>
     <div id="gallery" class="gallery">
       <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/0HBCRuyaZnSY98cH7q-f2Q/7mQDkMj1MM2DncqGVvAF_9NMvypLy4lmjF8yvUPCIH9gh1MoYwj2rn0VEa_xgW13-z1_fgLdTkEimNC3oy6EUgwfA2fuCeC2XKz8HRrEN1tEhUfZP_di373XjSVtZWMUEqqycftKDPQ0DwpP0P31Ur8odvTke5Gry8z1f4M4E_4/7BcwpIdHMlHx0iTazqA5mnNAGGIf9MZ4kC0SuSxZ7q4" alt="Cover of Bruges-la-Morte, by Georges Rodenbach " class="book-cover" loading="lazy"><div class="book-title">Bruges-la-Morte, by Georges Rodenbach </div><div class="book-notes">A melancholy portrait of grief &amp; obsession in a dead city. First published 1892 &amp; thought to be the first work of fiction illustrated with photographs. Completely mesmerising: I read it in 2 days.</div><div class="book-link"><a href="Revisiting Bruges-la-Morte" target="_blank" rel="noopener noreferrer">Revisiting Bruges-la-Morte →</a></div></div>
       <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/_V-KLM2PurUVMVIAyiRkWg/QcbWF4_oxbHB_3gMYbMJSbSqFHq4rZVzHOdXVRUo7drCQ-uJL1SpCKt2enkaIVPcAifb1g6eDxIWlZzsnAVFGFCt4BQGS7YNbllhoAlBG2uSSUjOD-fBLRuaU3OSojh6g3aTArWcO15MN8uYiI6YPzYhJ8sy6PrlGBQtphQbZUhHgV4blnqjvj1Pg37PE6vD/DiU_wBASNvV3a8CtwuCKu8NMHoqZJ84ZOrE4K2l-Zzo" alt="Cover of War and Turpentine, by Stefan Hertmans" class="book-cover" loading="lazy"><div class="book-title">War and Turpentine, by Stefan Hertmans</div><div class="book-notes">I cried in public while reading this book, and I&#39;d do it again. Absolutely beautiful and heartrending novel.</div></div>

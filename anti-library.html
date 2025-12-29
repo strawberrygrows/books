@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel&#39;s Library — Anti-Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="list-view">
+  <div class="container">
+    <div class="header">
+  <div class="ornament">✦ ✦ ✦</div>
+  <h1>Rachel's Library</h1>
 
+  <nav class="nav-sections">
+
+    <!-- BOOKS -->
+    <div class="nav-group">
+      <div class="nav-heading">Books</div>
+      <div class="nav-links">
+        <a href="index.html">Top recs</a>
+        <a href="2024.html">2024</a>
+        <a href="2025.html">2025</a>
+        <a href="library.html">Library</a>
+        <a href="anti-library.html">Anti-Library</a>
+      </div>
+    </div>
+
+    <!-- GENERAL -->
+    <div class="nav-group">
+      <div class="nav-heading">General</div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+<!-- Add this tiny script to apply the active class -->
+<script>
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === here) {
+      a.classList.add('active');
+    }
+  });
+</script>
+
+    <div class="page-heading">
+      <h2>Anti-Library</h2>
+    </div>
+    <div id="gallery" class="gallery">
+      <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/hzC4nkXLJsDszhUPTHyQ_w/XafWU94fJLJPw82S1lqAiislkJHO_h0XKYXDzE7bewky4N8HNrjX56pEMfzpp0YDseAPrs2aRd4z501w4Iipn-a1kBNXQX_FbT85A6wsC7siR3bB6MkzgxhWLw2H_QdOF6gKrRSyP_AoXuZdWCV7MJZJ3oOWS2PwRTXUj7CGSGk/bfplV0EFacZwjOzNlSJ_HGD4pHBS2g_mHf9YWu1-Ajc" alt="Cover of Death and the Penguin, by Andrew Kurkov" class="book-cover" loading="lazy"><div class="book-title">Death and the Penguin, by Andrew Kurkov</div><div class="book-notes">I had assumed the penguin living in his flat would be large, on the basis that the emperor penguin is the default penguin species. But actually, the penguin was very small. </div></div>
+    </div>
+  </div>
+</body>
+</html>

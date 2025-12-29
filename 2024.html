@@ -9,22 +9,47 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="ornament">✦ ✦ ✦</div>
-      <h1>Rachel's Library</h1>
+  <div class="ornament">✦ ✦ ✦</div>
+  <h1>Rachel's Library</h1>
+
+  <nav class="nav-sections">
+
+    <!-- BOOKS -->
+    <div class="nav-group">
+      <div class="nav-heading">Books</div>
       <div class="nav-links">
-        
-    <a href="index.html">Books I recommend</a>
-    <a href="2025.html">Books I read in 2025</a>
-    <a href="2024.html">Books I read in 2024</a>
-    <a href="other.html">Other books</a>
-  
+        <a href="index.html">Top recs</a>
+        <a href="2024.html">2024</a>
+        <a href="2025.html">2025</a>
+        <a href="library.html">Library</a>
+        <a href="anti-library.html">Anti-Library</a>
       </div>
     </div>
+
+    <!-- GENERAL -->
+    <div class="nav-group">
+      <div class="nav-heading">General</div>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+<!-- Add this tiny script to apply the active class -->
+<script>
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === here) {
+      a.classList.add('active');
+    }
+  });
+</script>
 
     <div class="page-heading">
       <h2>Books I read in 2024</h2>
     </div>
-
     <div id="gallery" class="gallery">
       <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/19VqdhJ1czDRZzD1bRAXbA/48e3gMXZyHqUWflCqbUfeIpmOZIXnnysQwlhZIwX9cKvQYhbK2dWhrFG523o4YOKAi_LlobrZ5sT7ooUhKoE59pXYnThtpffuKsnGgFMzDe7ozbnymU6HKuVAJvmq0E2d7e6noPr0JSIPjIIpAsH5nP1HFKQZQKiqKKpsoCnxiA/n-u55bfwgtRX4gLWw_gHY0OPJ0iVn4jZp3NSbl87fmk" alt="Cover of The Unbearable Lightness of Being, by Milan Kundera" class="book-cover" loading="lazy"><div class="book-title">The Unbearable Lightness of Being, by Milan Kundera</div><div class="book-notes">An old favourite which has affected my inner monologue as few books do. A friend asked me recently: what inner conflicts/tension am I carrying with me that I won&#39;t resolve? About half of them are in here.</div></div>
       <div class="book-card"><img src="https://v5.airtableusercontent.com/v3/u/48/48/1766988000000/Gi-nLScEq4fkf-SaTUeOiA/YLyNzlzenn4bRYwJNDBm0CUR9_aL8pdyB_iDVZIR3C0l_L6nTVjzCgimtNAQeux5Dru9xOxBtkK6rvq8oCcPGcttxC7NbtIXbkdnQcjap8dCAW8nS_HHDVCLxqdg8FKRzUmrhIYIpiw470dfGntpQjlqbRFINkR54ezPFnqtEYE/ucFRDod5usWyPq5iPbXC2ySs-3by-nXzk1WKjhNa36o" alt="Cover of The Happy Couple, by Naoise Dolan" class="book-cover" loading="lazy"><div class="book-title">The Happy Couple, by Naoise Dolan</div><div class="book-notes">Practically inhaled this today. Was almost late to a dinner party in my own house because I read 170 pages in one sitting and forgot time was passing. Couldn&#39;t really tell you why.</div></div>
