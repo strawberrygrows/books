@@ -136,12 +136,35 @@
         .setup-prompt button:hover {
             background: #a0632a;
         }
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;         /* fixed space between rows and columns */
-    padding: 20px 0;
+    gap: 20px;
+    max-width: 1200px;  /* Controls overall width */
+    margin: 0 auto;     /* Centers the gallery */
+    padding: 20px;      /* Prevents cards from touching edges */
 }
+
+/* Limit to max 4 columns on wide screens */
+@media (min-width: 1280px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Make book cards square */
+.book-card {
+    background: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1 / 1;  /* Forces square shape */
+}
+
 /* BOOK CARD — adjustable, clean, no border, transparent background */
 
 .book-card {
