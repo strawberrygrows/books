@@ -6,6 +6,7 @@ const fs = require('fs');
 
 const BASE_ID = 'app12LraPjbTp4fHG';
 const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
+const header = fs.readFileSync('partials/header.html', 'utf8');
 
 // Require a token
 if (!AIRTABLE_TOKEN) {
