@@ -18,14 +18,7 @@ if (!AIRTABLE_TOKEN) {
 // ---- PAGES TO GENERATE ----
 // Adjust view names / filenames if needed.
 const PAGES = [
-  {
-    file: 'index.html',
-    table: 'Books read',
-    view: 'Recommended',
-    title: "Rachel's Library — Recommendations",
-    heading: 'Top recs',
-    isList: false,
-  },
+
   {
     file: '2025.html',
     table: 'Books read',
