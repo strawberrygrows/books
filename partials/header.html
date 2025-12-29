@@ -10,9 +10,22 @@
 </div>
 
 <script>
-  const here = location.pathname.split('/').pop() || 'index.html';
+  function normalise(path) {
+    // Treat /index.html the same as /
+    path = path.replace(/\/index\.html$/, '/');
+    // Remove trailing slash (except root)
+    if (path.length > 1 && path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+    return path;
+  }
+
+  const currentPath = normalise(window.location.pathname);
+
   document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') === here) {
+    const linkPath = normalise(new URL(a.getAttribute('href'), window.location.origin).pathname);
+
+    if (linkPath === currentPath) {
       a.classList.add('active');
     }
   });
