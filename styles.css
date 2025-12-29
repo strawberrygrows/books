@@ -155,7 +155,7 @@ h1 {
 /* Limit to max 4 columns on wide screens */
 @media (min-width: 1280px) {
     .gallery {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
@@ -163,7 +163,7 @@ h1 {
 .book-card {
     background: transparent; 
     border-radius: 10px;
-    padding: 20px;
+    padding: 0px;
     box-shadow: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
