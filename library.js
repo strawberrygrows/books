@@ -243,9 +243,13 @@ function showError(message) {
     }
 }
 
-// Setup on page load
 document.addEventListener('DOMContentLoaded', () => {
     buildNav();
+    
+    // Skip everything else if this page doesn't need books
+    if (window.skipBookFetch) {
+        return;
+    }
     
     // Create token prompt and loading elements if they don't exist
     if (!document.getElementById('setupPrompt')) {
