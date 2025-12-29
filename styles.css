@@ -51,12 +51,15 @@ h1 {
     margin: 10px 0;
 }
 
+
+
 .nav-sections {
     display: flex;
-    gap: 40px;
+    justify-content: center;  /* Centers the nav-links container */
     margin-top: 10px;
     flex-wrap: wrap;
 }
+
 
 .nav-group {
     display: flex;
