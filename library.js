@@ -262,12 +262,14 @@ document.addEventListener('DOMContentLoaded', () => {
         createLoadingElement();
     }
 
-    const token = localStorage.getItem('airtable_token');
-    if (token) {
-        const setupPrompt = document.getElementById('setupPrompt');
-        if (setupPrompt) {
-            setupPrompt.classList.add('hidden');
-        }
-        fetchBooks();
+const token = localStorage.getItem('airtable_token');
+const gallery = document.getElementById('gallery');
+if (token && gallery) {
+    const setupPrompt = document.getElementById('setupPrompt');
+    if (setupPrompt) {
+        setupPrompt.classList.add('hidden');
+    }
+    fetchBooks();
+
     }
 });
