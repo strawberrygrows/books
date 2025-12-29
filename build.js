@@ -42,11 +42,10 @@ const PAGES = [
     heading: 'Books I read in 2024',
     isList: false,
   },
-  // If you've renamed "Other books" page to library.html:
   {
     file: 'library.html',               // was other.html previously
     table: 'Books read',
-    view: 'Other books',
+    view: 'Library',
     title: "Rachel's Library — Library",
     heading: 'Library',
     isList: true,
