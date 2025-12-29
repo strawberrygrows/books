@@ -373,7 +373,6 @@
         
 
 
-
 /* IMAGE BLOCK STYLES */
 .image-block {
     margin: 0;
@@ -381,20 +380,12 @@
     padding: 0;
 }
 
-
-/* IMAGE BLOCK STYLES */
-.image-block {
-    margin: 0;          /* let .block + grid handle spacing */
-    max-width: none;    /* same width rules as other blocks */
-}
-
-/* Make the image exactly as wide as the inner content area */
 .image-block img {
     width: 100%;
     height: auto;
     display: block;
     border: 1px solid #8b4513;
-    box-sizing: border-box;  /* include border *inside* the 100% width */
+    box-sizing: border-box;
 }
 
 .image-caption {
@@ -405,4 +396,3 @@
     text-align: center;
     line-height: 1.5;
 }
-
