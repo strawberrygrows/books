@@ -85,12 +85,23 @@ async function fetchBooks(tableName, viewName) {
 // ---- Build one book card ----
 function generateBookCard(record) {
   const f = record.fields || {};
-  const img = f['Cover image']?.[0]?.url || '';
   const titleAuthor = f['Title author'] || 'Untitled';
   const notes = f['Notes'] || '';
   const linkURL = f['Link URL'] || '';
   const linkText = f['Link text'] || '';
 
+    let img = '';
+  if (f['Cover image']?.[0]) {
+    const titleAuthor = f['Title author'] || 'untitled';
+    const extension = require('path').extname(f['Cover image'][0].filename || '.jpg');
+    const filename = titleAuthor
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .substring(0, 100) + extension;
+    img = `images/${filename}`;
+  }
+  
   let card = `<div class="book-card">`;
 
   if (img) {
