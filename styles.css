@@ -51,21 +51,42 @@
             font-size: 1.3em;
             margin: 10px 0;
         }
+.nav-sections {
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-heading {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #d4af37;
+  opacity: 0.85;
+}
+
 .nav-links {
-    margin-top: 10px;
-    font-size: 0.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .nav-links a {
-    color: #d4af37;
-    text-decoration: none;
-    margin: 0 8px;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
+  font-size: 0.9rem;
+  color: #f4f1de;
+  text-decoration: none;
 }
 
 .nav-links a:hover {
-    border-bottom-color: #d4af37;
+  text-decoration: underline;
+  color: #d4af37;
 }
 
         .setup-prompt {
