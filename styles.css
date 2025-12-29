@@ -74,8 +74,10 @@ h1 {
 
 .nav-links {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: row;
+    gap: 10px;
+        justify-content: center;  /* Centers the links */
+
 }
 
 .nav-links a {
