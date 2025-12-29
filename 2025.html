@@ -12,20 +12,43 @@
    <h1>✦ Rachel Edwards ✦</h1>
   <nav class="nav-sections">
     <div class="nav-links">
-        <a href="about.html">About</a>
+        <a href="index.html">About</a>
    <a href="2025.html">2025</a>
       <a href="2024.html">2024</a>
     </div>
   </nav>
 </div>
 
+
 <script>
-  const here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') === here) {
-      a.classList.add('active');
+  // Run this after the DOM is ready – if this script is at the bottom
+  // of the HTML body, that's already true.
+  (function() {
+    // 1. Work out the "current page" part
+    let here = window.location.pathname;
+    // keep only the last bit after the last slash
+    here = here.substring(here.lastIndexOf('/') + 1);
+
+    // If it's empty (e.g. URL is just "/"), assume index.html
+    if (!here) {
+      here = 'index.html';
     }
-  });
+
+    // 2. Loop over all nav links
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      let href = a.getAttribute('href');
+
+      // Normalise href in the same way:
+      // - if href is "/" or empty, treat it as index.html
+      if (href === '/' || href === '') {
+        href = 'index.html';
+      }
+
+      if (href === here) {
+        a.classList.add('active');
+      }
+    });
+  })();
 </script>
 
     <div class="page-heading">
