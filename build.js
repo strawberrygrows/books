@@ -1,19 +1,20 @@
 // build.js
-// Generate static HTML pages from Airtable so the live site makes NO Airtable calls.
+// Generate fully static HTML pages using Airtable data.
+// The browser makes ZERO Airtable calls. Everything is pre-rendered.
 
 const fs = require('fs');
 
 const BASE_ID = 'app12LraPjbTp4fHG';
 const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
 
-// ---- Safety check: make sure we actually have a token ----
+// Require a token
 if (!AIRTABLE_TOKEN) {
-  console.error('❌ AIRTABLE_TOKEN is not set. Set it in your env / GitHub Actions secrets.');
+  console.error('❌ Missing AIRTABLE_TOKEN. Set it locally or in GitHub Actions secrets.');
   process.exit(1);
 }
 
-// ---- Define the pages we want to build ----
-// Make sure these view names match EXACTLY the views in your "Books read" table.
+// ---- PAGES TO GENERATE ----
+// Make sure these view names match your Airtable base exactly.
 const PAGES = [
   {
     file: 'index.html',
@@ -26,7 +27,7 @@ const PAGES = [
   {
     file: '2025.html',
     table: 'Books read',
-    view: '2025', // <--- IMPORTANT: this should match your Airtable view name
+    view: '2025',
     title: "Rachel's Library — 2025",
     heading: 'Books I read in 2025',
     isList: false,
@@ -45,11 +46,11 @@ const PAGES = [
     view: 'Other books',
     title: "Rachel's Library — Other Books",
     heading: 'Other books',
-    isList: true, // will add body class="list-view"
+    isList: true,
   },
 ];
 
-// ---- Airtable fetch helper ----
+// ---- Fetch Airtable records ----
 async function fetchBooks(tableName, viewName) {
   const url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(
     tableName
@@ -62,14 +63,13 @@ async function fetchBooks(tableName, viewName) {
   });
 
   if (!response.ok) {
-    // Try to show Airtable's own error message for easier debugging
-    let errorBody = '';
+    let body = '';
     try {
-      errorBody = await response.text();
+      body = await response.text();
     } catch {
-      errorBody = '<no body>';
+      body = '<no body>';
     }
-    console.error('Airtable error details:', errorBody);
+    console.error('Airtable error response:', body);
     throw new Error(`Failed to fetch view "${viewName}" (status ${response.status})`);
   }
 
@@ -77,86 +77,85 @@ async function fetchBooks(tableName, viewName) {
   return data.records || [];
 }
 
-// ---- Turn one Airtable record into one book card ----
+// ---- Build one book card ----
 function generateBookCard(record) {
-  const fields = record.fields || {};
-  const images = fields['Cover image'] || [];
-  const coverImage = images[0] ? images[0].url : '';
-  const titleAuthor = fields['Title author'] || 'Untitled';
-  const notes = fields['Notes'] || '';
-  const linkURL = fields['Link URL'] || '';
-  const linkText = fields['Link text'] || '';
+  const f = record.fields || {};
+  const img = f['Cover image']?.[0]?.url || '';
+  const titleAuthor = f['Title author'] || 'Untitled';
+  const notes = f['Notes'] || '';
+  const linkURL = f['Link URL'] || '';
+  const linkText = f['Link text'] || '';
 
-  let html = '<div class="book-card">';
+  let card = `<div class="book-card">`;
 
-  if (coverImage) {
-    html += `<img src="${coverImage}" alt="Cover of ${escapeHtml(
+  if (img) {
+    card += `<img src="${escapeAttr(img)}" alt="Cover of ${escapeHtml(
       titleAuthor
     )}" class="book-cover" loading="lazy">`;
   }
 
-  html += `<div class="book-title">${escapeHtml(titleAuthor)}</div>`;
+  card += `<div class="book-title">${escapeHtml(titleAuthor)}</div>`;
 
   if (notes) {
-    // Notes are treated as plain text; if you want to allow basic HTML, remove escapeHtml
-    html += `<div class="book-notes">${escapeHtml(notes)}</div>`;
+    card += `<div class="book-notes">${escapeHtml(notes)}</div>`;
   }
 
   if (linkURL && linkText) {
-    html += `<div class="book-link"><a href="${escapeAttribute(
+    card += `<div class="book-link"><a href="${escapeAttr(
       linkURL
     )}" target="_blank" rel="noopener noreferrer">${escapeHtml(linkText)} →</a></div>`;
   }
 
-  html += '</div>';
-  return html;
+  card += `</div>`;
+  return card;
 }
 
-// ---- Build the nav once, based on PAGES ----
-function generateNav(currentFile) {
-  return PAGES.map((page) => {
-    const isActive = page.file === currentFile;
-    const classAttr = isActive ? ' class="nav-link active"' : ' class="nav-link"';
-    return `<a href="${page.file}"${classAttr}>${escapeHtml(page.heading)}</a>`;
-  }).join('\n                ');
+// ---- Build the navigation bar (same on every page) ----
+function generateNav() {
+  return `
+    <a href="index.html">Books I recommend</a>
+    <a href="2025.html">Books I read in 2025</a>
+    <a href="2024.html">Books I read in 2024</a>
+    <a href="other.html">Other books</a>
+  `;
 }
 
-// ---- Wrap cards + nav + header in a full HTML document ----
-function generateHTML(pageConfig, booksHTML) {
-  const { title, heading, file, isList } = pageConfig;
+// ---- Construct the full HTML page ----
+function generateHTML(page, booksHTML) {
+  const { title, heading, isList } = page;
   const bodyClass = isList ? ' class="list-view"' : '';
-
-  const navHTML = generateNav(file);
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${escapeHtml(title)}</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(title)}</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body${bodyClass}>
-    <div class="container">
-        <div class="header">
-            <div class="ornament">✦ ✦ ✦</div>
-            <h1>Rachel's Library</h1>
-            <div class="nav-links">
-                ${navHTML}
-            </div>
-        </div>
-        <div class="page-heading">
-            <h2>${escapeHtml(heading)}</h2>
-        </div>
-        <div id="gallery" class="gallery">
-            ${booksHTML}
-        </div>
+  <div class="container">
+    <div class="header">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h1>Rachel's Library</h1>
+      <div class="nav-links">
+        ${generateNav()}
+      </div>
     </div>
+
+    <div class="page-heading">
+      <h2>${escapeHtml(heading)}</h2>
+    </div>
+
+    <div id="gallery" class="gallery">
+      ${booksHTML}
+    </div>
+  </div>
 </body>
 </html>`;
 }
 
-// ---- Very small HTML escaping helpers ----
+// ---- Escaping helpers ----
 function escapeHtml(str) {
   return String(str)
     .replace(/&/g, '&amp;')
@@ -166,28 +165,27 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-function escapeAttribute(str) {
-  // for href, etc.
+function escapeAttr(str) {
   return escapeHtml(str);
 }
 
-// ---- Main build function ----
+// ---- Main build ----
 async function buildSite() {
   console.log('Starting build...');
 
   for (const page of PAGES) {
-    console.log(`Building ${page.file} (view "${page.view}")...`);
+    console.log(`Building ${page.file} (Airtable view: "${page.view}")...`);
 
     try {
       const records = await fetchBooks(page.table, page.view);
-      const booksHTML = records.map(generateBookCard).join('\n            ');
+      const bookCards = records.map(generateBookCard).join('\n      ');
 
-      const html = generateHTML(page, booksHTML);
-
+      const html = generateHTML(page, bookCards);
       fs.writeFileSync(page.file, html);
-      console.log(`✓ Generated ${page.file} with ${records.length} books`);
-    } catch (error) {
-      console.error(`✗ Failed to build ${page.file}:`, error.message);
+
+      console.log(`✓ ${page.file} generated with ${records.length} books`);
+    } catch (err) {
+      console.error(`✗ Failed to build ${page.file}:`, err.message);
       process.exit(1);
     }
   }
