@@ -90,6 +90,11 @@ h1 {
     color: #d4af37;
 }
 
+.nav-links a.active {
+  color: #d4af37;
+  text-decoration: underline;
+}
+
 .setup-prompt {
     max-width: 700px;
     margin: 20px auto;
