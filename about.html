@@ -13,12 +13,23 @@
         window.skipBookFetch = true;
     </script>
         
-    <div class="container">
-        <div class="header">
-            <div class="ornament">✦ ✦ ✦</div>
-            <h1>Rachel Edwards</h1>
-            <div class="nav-links"></div>
-        </div>
+  <div class="container">
+    <div id="header-placeholder"></div>
+
+    <!-- rest of about page -->
+
+  </div>
+
+  <script>
+    fetch('partials/header.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      });
+  </script>
+  <body>
+
+
 
         <div class="blocks-container">
             <div class="block block--wide">
