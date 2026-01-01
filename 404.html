@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Edwards / 404</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header will be injected here -->
+        <div id="header-placeholder"></div>
+
+        <div class="blocks-container">
+            <div class="block block--wide">
+                <h2>Oops</h2>
+                <p>Looks like that was a broken link. <a href="/books/index.html">Click here to go home.</a> </p>
+            </div>
+
+        
+    <script>
+      fetch('partials/header.html')
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById('header-placeholder').innerHTML = html;
+        });
+    </script>
+</body>
+</html>
