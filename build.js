@@ -20,6 +20,15 @@ if (!AIRTABLE_TOKEN) {
 const PAGES = [
 
   {
+    file: '2026.html',
+    table: 'Books read',
+    view: '2026',
+    title: "Rachel's Library — 2026",
+    heading: 'Books I read in 2026',
+    isList: false,
+  },
+
+    {
     file: '2025.html',
     table: 'Books read',
     view: '2025',
