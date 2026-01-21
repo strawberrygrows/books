@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel&#39;s Library — 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+   <h1>✦ Rachel Edwards ✦</h1>
+  <nav class="nav-sections">
+    <div class="nav-links">
+        <a href="index.html">About</a>
+   <a href="2025.html">2025</a>
+      <a href="2024.html">2024</a>
+    </div>
+  </nav>
+</div>
+
+<link rel="icon" type="image/x-icon" href="/books/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/books/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/books/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/books/apple-touch-icon.png">
+<link rel="manifest" href="/books/site.webmanifest">
+
+<script>
+  // Run this after the DOM is ready – if this script is at the bottom
+  // of the HTML body, that's already true.
+  (function() {
+    // 1. Work out the "current page" part
+    let here = window.location.pathname;
+    // keep only the last bit after the last slash
+    here = here.substring(here.lastIndexOf('/') + 1);
+
+    // If it's empty (e.g. URL is just "/"), assume index.html
+    if (!here) {
+      here = 'index.html';
+    }
+
+    // 2. Loop over all nav links
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      let href = a.getAttribute('href');
+
+      // Normalise href in the same way:
+      // - if href is "/" or empty, treat it as index.html
+      if (href === '/' || href === '') {
+        href = 'index.html';
+      }
+
+      if (href === here) {
+        a.classList.add('active');
+      }
+    });
+  })();
+</script>
+
+    <div class="page-heading">
+      <h2>Books I read in 2026</h2>
+    </div>
+    <div id="gallery" class="gallery">
+      <div class="book-card"><img src="images/anna-karenina-by-leo-tolstoy.jpeg" alt="Cover of Anna Karenina, by Leo Tolstoy" class="book-cover" loading="lazy"><div class="book-title">Anna Karenina, by Leo Tolstoy</div></div>
+    </div>
+  </div>
+</body>
+</html>
