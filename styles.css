@@ -297,9 +297,6 @@ h1 {
     transition: transform 0.2s ease;
 }
 
-.block:hover {
-    transform: translateY(-3px);
-}
 
 .block h2 {
     color: #d4af37;
