@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,11 +6,267 @@
 
 body {
     font-family: 'Garamond', 'Georgia', serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #f4f1de;
-    padding: 20px 0;
+    background: #faf6f0;
+    color: #222;
     min-height: 100vh;
 }
+
+a {
+    color: #c0785a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ── HOMEPAGE LAYOUT ── */
+
+.home-container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.home-header h1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    color: #222;
+}
+
+.home-section {
+    border-top: 1px solid #d4b09a;
+    padding: 28px 0;
+}
+
+.home-section h2 {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0785a;
+    font-weight: 400;
+    margin-bottom: 14px;
+}
+
+.home-section p {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.home-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* About photo floated right */
+.about-photo {
+    float: right;
+    width: 38%;
+    margin: 0 0 16px 24px;
+}
+
+.about-photo img {
+    width: 100%;
+    border: 1px solid #d4b09a;
+    display: block;
+}
+
+.about-photo .caption {
+    font-size: 0.72rem;
+    font-style: italic;
+    color: #888;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.about-body::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* Social links */
+.social-links {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 12px;
+    text-align: right;
+}
+
+.social-links a {
+    color: #888;
+    margin: 0 4px;
+}
+
+.social-links a:hover {
+    color: #c0785a;
+    text-decoration: none;
+}
+
+/* Lists and bullets */
+.home-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-section li {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #555;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.home-section li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #c0785a;
+    font-size: 0.8em;
+}
+
+/* ── BOOKS SECTION ── */
+
+.books-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.year-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.ytab {
+    background: none;
+    border: 1px solid #d4b09a;
+    font-family: 'Garamond', 'Georgia', serif;
+    font-size: 0.78rem;
+    color: #888;
+    cursor: pointer;
+    padding: 3px 10px;
+    transition: all 0.15s ease;
+}
+
+.ytab.active {
+    background: #c0785a;
+    border-color: #c0785a;
+    color: #fff;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 12px;
+}
+
+.vtab {
+    background: none;
+    border: none;
+    font-family: 'Garamond', 'Georgia', serif;
+    font-size: 0.78rem;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+}
+
+.vtab.active {
+    color: #c0785a;
+    border-bottom-color: #c0785a;
+}
+
+.year-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0785a;
+    font-weight: 400;
+    margin: 24px 0 12px;
+}
+
+.books-section:first-of-type .year-label {
+    margin-top: 0;
+}
+
+.books-loading {
+    font-size: 0.82rem;
+    color: #aaa;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+/* ── BOOK GALLERY (homepage) ── */
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.book-grid .book img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 1px solid #d4b09a;
+    display: block;
+}
+
+.book-grid .book .btitle {
+    font-size: 0.75rem;
+    color: #222;
+    font-weight: 600;
+    margin: 8px 0 4px;
+    line-height: 1.3;
+}
+
+.book-grid .book .bnotes {
+    font-size: 0.7rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ── BOOK LIST (homepage) ── */
+
+.book-list {
+    display: none;
+}
+
+.book-list .brow {
+    border-bottom: 1px solid #e8d8cc;
+    padding: 10px 0;
+}
+
+.book-list .brow .btitle {
+    font-size: 0.82rem;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+
+.book-list .brow .bnotes {
+    font-size: 0.78rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* list mode: swap grid/list visibility */
+.list-mode .book-grid { display: none; }
+.list-mode .book-list { display: block; }
+
+/* ── YEAR PAGES (2024/2025/2026) ── */
 
 .container {
     max-width: 1000px;
@@ -29,14 +285,6 @@ body {
     margin-right: auto;
 }
 
-.tagline {
-    color: #8b4513;
-    font-size: 1em;
-    font-style: italic;
-    margin-top: 15px;
-    letter-spacing: 1px;
-}
-
 h1 {
     font-size: 1em;
     color: #d4af37;
@@ -45,31 +293,11 @@ h1 {
     margin-bottom: 0px;
 }
 
-.ornament {
-    color: #8b4513;
-    font-size: 1.3em;
-    margin: 10px 0;
-}
-
 .nav-sections {
     display: flex;
     justify-content: center;
     margin-top: 10px;
     flex-wrap: wrap;
-}
-
-.nav-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.nav-heading {
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #d4af37;
-    opacity: 0.85;
 }
 
 .nav-links {
@@ -91,58 +319,23 @@ h1 {
 }
 
 .nav-links a.active {
-  color: #d4af37;
-  text-decoration: underline;
-}
-
-.setup-prompt {
-    max-width: 700px;
-    margin: 20px auto;
-    background: linear-gradient(145deg, #2d3561 0%, #1f2544 100%);
-    border: 1px solid #d4af37;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.setup-prompt h2 {
     color: #d4af37;
-    margin-bottom: 20px;
-    font-size: 1.5em;
+    text-decoration: underline;
 }
 
-.setup-prompt p {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #c9b896;
+.page-heading {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.setup-prompt input {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    border: 1px solid #8b4513;
-    background: #16213e;
-    color: #f4f1de;
-    font-family: monospace;
-    margin: 10px 0;
+.page-heading h2 {
+    color: #d4af37;
+    font-size: 1.2em;
+    font-weight: 300;
 }
 
-.setup-prompt button {
-    background: #8b4513;
-    color: #f4f1de;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1.1em;
-    cursor: pointer;
-    font-family: 'Garamond', 'Georgia', serif;
-    transition: background 0.3s ease;
-    margin-top: 10px;
-}
-
-.setup-prompt button:hover {
-    background: #a0632a;
-}
-
+/* Year-page gallery — full-width, 5 columns */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -152,31 +345,25 @@ h1 {
     padding: 20px;
 }
 
-/* Limit to max 4 columns on wide screens */
 @media (min-width: 1280px) {
     .gallery {
         grid-template-columns: repeat(5, 1fr);
     }
 }
 
-/* BOOK CARD — adjustable, clean, no border, transparent background */
 .book-card {
-    background: transparent; 
-    border-radius: 10px;
-    padding: 0px;
-    box-shadow: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: transparent;
     display: flex;
     flex-direction: column;
 }
 
 .book-cover {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     object-fit: cover;
     border: 1px solid #8b4513;
     margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .book-title {
@@ -193,7 +380,7 @@ h1 {
     color: #c9b896;
     line-height: 1.5;
     font-size: 0.75em;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0,0,0,0.2);
     padding: 12px;
     border-left: 1px solid #5a7d9a;
 }
@@ -207,7 +394,6 @@ h1 {
     color: #d4af37;
     text-decoration: none;
     border-bottom: 1px solid #d4af37;
-    transition: color 0.2s ease;
 }
 
 .book-link a:hover {
@@ -215,29 +401,14 @@ h1 {
     border-bottom-color: #e8d5b7;
 }
 
-.loading {
-    text-align: center;
-    color: #d4af37;
-    font-size: 1.5em;
-    padding: 60px;
+/* Year-page body background */
+body:has(.gallery) {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #f4f1de;
+    padding: 20px 0;
 }
 
-.error {
-    text-align: center;
-    color: #cd5c5c;
-    font-size: 1.2em;
-    padding: 40px;
-    background: rgba(139, 0, 0, 0.2);
-    border: 1px solid #8b0000;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.hidden {
-    display: none;
-}
-
-/* LIST PAGE STYLES */
+/* List view (library/anti-library pages) */
 .list-view #gallery {
     display: block;
     max-width: 800px;
@@ -252,9 +423,9 @@ h1 {
     display: block;
 }
 
-.list-view .book-cover {
-    display: none;
-}
+.list-view .book-cover { display: none; }
+.list-view .book-notes { display: none; }
+.list-view .book-link { display: none; }
 
 .list-view .book-title {
     font-size: 1em;
@@ -265,161 +436,23 @@ h1 {
     line-height: 1.2;
 }
 
-.list-view .book-notes {
-    display: none;
-}
-
-.list-view .book-link {
-    display: none;
-}
-
-.blocks-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 20px;
-    grid-auto-flow: dense;
-}
-
-@media (min-width: 769px) {
-    .blocks-container {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        padding: 0;
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+    .home-container {
+        padding: 24px 16px 60px;
     }
-}
 
-.block {
-    background: transparent;
-    border: 0px solid #8b4513;
-    padding: 30px;
-    transition: transform 0.2s ease;
-}
+    .about-photo {
+        float: none;
+        width: 60%;
+        margin: 0 auto 20px;
+    }
 
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.block h2 {
-    color: #d4af37;
-    font-size: 1.4em;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    font-weight: 300;
-    border-bottom: 1px solid #8b4513;
-    padding-bottom: 10px;
-}
-
-.block p {
-    color: #c9b896;
-    line-height: 1.7;
-    font-size: 0.75em;
-    margin-bottom: 15px;
-}
-
-.block ul {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
-}
-
-.block li {
-    color: #c9b896;
-    line-height: 1.8;
-    font-size: 0.75em;
-    padding-left: 15px;
-    position: relative;
-}
-
-.block li:before {
-    content: "•";
-    color: #8b4513;
-    position: absolute;
-    left: 0;
-}
-
-.block a {
-    color: #d4af37;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-}
-
-.block a:hover {
-    border-bottom-color: #d4af37;
-}
-
-.full-width-block {
-    grid-column: 1 / -1;
-}
-
-.block--wide {
-    grid-column: span 2;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.social-links a {
-    color: #d4af37;
-    text-decoration: none;
-    padding: 8px 15px;
-    border: 1px solid #8b4513;
-    transition: all 0.2s ease;
-}
-
-.social-links a:hover {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: #d4af37;
-}
-
-/* IMAGE BLOCK STYLES */
-.image-block {
-    margin: 0;
-    max-width: none;
-    padding: 0;
-}
-
-.image-block img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid #8b4513;
-    box-sizing: border-box;
-}
-
-.image-caption {
-    margin-top: 10px;
-    color: #c9b896;
-    font-size: 0.75em;
-    font-style: italic;
-    text-align: center;
-    line-height: 1.5;
-}
-
-/* MOBILE STYLES */
-@media (max-width: 768px) {
     .container {
-        max-width: 100%;
         padding: 0 15px;
-    }
-    
-    .block--wide {
-        grid-column: span 1 !important;
-    }
-    
-    .block {
-        padding: 20px;
-    }
-    
-    h1 {
-        font-size: 1.5em;
-    }
-    
-    .gallery {
-        padding: 10px;
-        gap: 15px;
     }
 }
