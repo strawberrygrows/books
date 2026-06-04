@@ -73,6 +73,7 @@ async function fetchBooks(tableName, viewName) {
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+      Accept: 'application/json',
     },
   });
 
