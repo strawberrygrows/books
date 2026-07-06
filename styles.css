@@ -154,11 +154,27 @@ a:hover {
     margin-bottom: 0;
 }
 
-/* About photo floated right */
+/* Intro layout */
+.intro-text {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #333330;
+    margin-bottom: 14px;
+}
+
+.about-body {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.intro-left {
+    flex: 1;
+    min-width: 0;
+}
+
 .about-photo {
-    float: right;
-    width: 32%;
-    margin: 4px 0 16px 24px;
+    flex: 0 0 26%;
 }
 
 .about-photo img {
@@ -176,32 +192,42 @@ a:hover {
     line-height: 1.4;
 }
 
-.about-body::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 /* Social links */
 .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.social-links svg {
+    width: 11px;
+    height: 11px;
+    fill: var(--muted);
+    display: block;
+    transition: fill 0.15s ease;
+}
+
+.social-links a:hover svg {
+    fill: var(--ink);
+}
+
+.project-links {
+    margin-top: 10px;
+}
+
+.project-links a {
+    display: block;
+    color: var(--muted);
     font-family: var(--font-ui);
     font-size: 12.5px;
-    color: var(--muted);
-    margin-top: 14px;
+    line-height: 1.9;
 }
 
 .social-links a {
-    color: var(--muted);
-}
-
-.social-links a:hover {
-    color: var(--ink);
-    text-decoration: none;
-}
-
-.social-links .sep {
-    margin: 0 5px;
-    color: var(--rule);
+    line-height: 0;
 }
 
 /* Misc list */
@@ -559,10 +585,14 @@ body:has(.gallery) {
         margin-bottom: 32px;
     }
 
+    .about-body {
+        flex-direction: column-reverse;
+    }
+
     .about-photo {
-        float: none;
+        flex: none;
         width: 55%;
-        margin: 0 auto 20px;
+        margin: 0 auto;
     }
 
     .book-grid {
