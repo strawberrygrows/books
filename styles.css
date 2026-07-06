@@ -586,7 +586,7 @@ body:has(.gallery) {
     }
 
     .about-body {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .about-photo {
