@@ -14,51 +14,70 @@
 <body>
 <div class="home-container">
 
-    <header class="home-header">
+    <header class="masthead">
         <h1>Rachel Edwards</h1>
+        <nav class="site-nav">
+            <a id="nav-about" class="active" href="#about" onclick="show('about'); return false;">about</a>
+            <a id="nav-books" href="#books" onclick="show('books'); return false;">books</a>
+        </nav>
     </header>
 
-    <section class="home-section">
-        <h2>About me</h2>
-        <div class="about-body">
-            <div class="about-photo">
-                <img src="https://raw.githubusercontent.com/strawberrygrows/books/main/Library%20photo.png" alt="Rachel climbing a ladder to reach a high bookshelf">
-                <div class="caption">In my natural habitat</div>
+    <!-- ── ABOUT VIEW ── -->
+    <div id="view-about" class="view active">
+
+        <section class="home-section intro-section">
+            <div class="about-body">
+                <div class="about-photo">
+                    <img src="https://raw.githubusercontent.com/strawberrygrows/books/main/Library%20photo.png" alt="Rachel climbing a ladder to reach a high bookshelf">
+                    <div class="caption">In my natural habitat</div>
+                </div>
+                <p><em>I like joining book clubs and making things happen. I live in London.</em></p>
+                <div class="social-links">
+                    <a href="https://twitter.com/underthenettle/" target="_blank">Twitter</a><span class="sep">·</span><a href="https://substack.com/@rachelsedwards" target="_blank">Notes</a><span class="sep">·</span><a href="https://bsky.app/profile/underthenettle.bsky.social" target="_blank">Bluesky</a><span class="sep">·</span><a href="https://instagram.com/rachelsedwards" target="_blank">Instagram</a><span class="sep">·</span><a href="https://www.linkedin.com/in/rachel-edwards-a27a737a/" target="_blank">LinkedIn</a>
+                </div>
             </div>
-            <p>Hi! I'm Rachel.</p>
-            <p>I work for Stripe, doing operations for <a href="https://worksinprogress.co/print" target="_blank">Works in Progress</a> magazine, and events for <a href="https://press.stripe.com/" target="_blank">Stripe Press</a>, a book publisher. Before that, I worked on events for Longview Philanthropy, advised the Treasury Select Committee on financial services policy, and worked a few different jobs at the Bank of England.</p>
+        </section>
+
+        <section class="home-section">
+            <h2>Theatre</h2>
+            <p>I occasionally review theatre in London on my Substack, <a href="https://accidents.substack.com/" target="_blank">Rare Accidents</a>. I've reviewed shows for <a href="https://everything-theatre.co.uk/author/rachel-edwards" target="_blank">Everything Theatre</a>, <a href="https://theatreweekly.com/author/racheledwards/" target="_blank">Theatre Weekly</a>, and the <a href="https://www.thereviewshub.com/a-thousand-sons-etcetera-theatre-london/" target="_blank">Reviews Hub</a>. For older shows (2022 and back), see my <a href="https://kingdomforastage.wordpress.com/" target="_blank">archive on Wordpress</a>.</p>
+            <p>I'm (very slowly) writing a play based on Shakespeare's Henry IV plays. An extract from <em>The Prince's Shadow</em> appears in <a href="https://www.waterstones.com/book/the-shakespeare-multiverse/valerie-m-fazel/louise-geddes/9780367257347" target="_blank">The Shakespeare Multiverse</a>, part of the Routledge Studies in Shakespeare series.</p>
+        </section>
+
+        <section class="home-section">
+            <h2>Half-understood things</h2>
+            <p>Antal Szerb (1901–1945) was a Hungarian essayist, novelist, and literary critic. Pushkin Press has published his novels, but much of his work has never been translated into English: his essays, his literary criticism, his diaries and letters.</p>
+            <p>I'm translating them, slowly and in no particular order, using Claude. You can read what I've done so far at <a href="https://antalszerb.com" target="_blank">antalszerb.com</a>.</p>
+        </section>
+
+        <section class="home-section">
+            <h2>Work</h2>
+            <p>I work for Stripe, doing operations for <a href="https://worksinprogress.co/print" target="_blank">Works in Progress</a> magazine, and events for <a href="https://press.stripe.com/" target="_blank">Stripe Press</a>, a book publisher.</p>
+            <p>Before that, I worked on events for Longview Philanthropy, advised the Treasury Select Committee on financial services policy, and worked a few different jobs at the Bank of England.</p>
+        </section>
+
+        <section class="home-section">
+            <h2>Giving</h2>
             <p>I've signed the <a href="https://www.givingwhatwecan.org/" target="_blank">Giving What We Can</a> pledge, committing myself to giving 10% of my income to effective charity, for life. Charities I donate to include the <a href="https://www.againstmalaria.com/" target="_blank">Against Malaria Foundation</a>, <a href="https://ourworldindata.org/" target="_blank">Our World In Data</a>, the <a href="https://leadelimination.org/" target="_blank">Lead Exposure Elimination Project</a>, <a href="https://www.newincentives.org/" target="_blank">New Incentives</a>, and <a href="https://savelife.in.ua/en/" target="_blank">Come Back Alive</a>.</p>
-            <div class="social-links">
-                <a href="https://twitter.com/underthenettle/" target="_blank">Twitter</a> ✦
-                <a href="https://substack.com/@rachelsedwards" target="_blank">Notes</a> ✦
-                <a href="https://bsky.app/profile/underthenettle.bsky.social" target="_blank">Bluesky</a> ✦
-                <a href="https://instagram.com/rachelsedwards" target="_blank">Instagram</a> ✦
-                <a href="https://www.linkedin.com/in/rachel-edwards-a27a737a/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="home-section">
-        <h2>Theatre reviews</h2>
-        <p>I occasionally review theatre in London on my substack, <a href="https://accidents.substack.com/" target="_blank">Rare Accidents</a>. I've reviewed shows for <a href="https://everything-theatre.co.uk/author/rachel-edwards" target="_blank">Everything Theatre</a>, <a href="https://theatreweekly.com/author/racheledwards/" target="_blank">Theatre Weekly</a>, and the <a href="https://www.thereviewshub.com/a-thousand-sons-etcetera-theatre-london/" target="_blank">Reviews Hub</a>. For older shows (2022 and back), see my <a href="https://kingdomforastage.wordpress.com/" target="_blank">archive on Wordpress</a>.</p>
-        <p>I'm (very slowly) writing a play based on Shakespeare's Henry IV plays. An extract from <em>The Prince's Shadow</em> appears in <a href="https://www.waterstones.com/book/the-shakespeare-multiverse/valerie-m-fazel/louise-geddes/9780367257347" target="_blank">The Shakespeare Multiverse</a>, part of the Routledge Studies in Shakespeare series.</p>
-    </section>
+        <section class="home-section">
+            <h2>Miscellany</h2>
+            <ul>
+                <li><a href="https://racheledwards.notion.site/12cf608da76d805cb19ef3c6f960a273" target="_blank">A painting hanging in my living room</a> &amp; my attempts to trace its history</li>
+                <li>Sonnet competitions: <a href="https://accidents.substack.com/p/the-sonnet-competition-again" target="_blank">distance</a> and <a href="https://accidents.substack.com/p/the-sonnet-competition" target="_blank">salt</a></li>
+                <li><a href="https://racheledwards.notion.site/208f608da76d8082a2a4ea200a7d661f" target="_blank">A list of every animal I saw on safari</a> in June 2025, Botswana and Zambia</li>
+                <li>I'm very fond of <a href="https://x.com/underthenettle/status/1876347419509801437?s=20" target="_blank">my kitchen</a> and <a href="https://x.com/underthenettle/status/2072317869736484879?s=20" target="_blank">my new lamp</a></li>
+                <li><a href="https://eclecticletters.substack.com/cp/159180340" target="_blank">Eclectic Letters #8:</a> fantastical cities, a poisonous French novel, the first transatlantic telegraph cable, and more</li>
+                <li><a href="https://docs.google.com/document/d/1_Tr-OBvn_xT1xzQrS_eQv6J3Pi6oqyGBHE6nXX21gU0/" target="_blank">Ghosts In The Machine:</a> some AI-generated poems I prompted in March 2022, based on the text from Hamlet</li>
+            </ul>
+        </section>
 
-    <section class="home-section">
-        <h2>Miscellany</h2>
-        <ul>
-            <li>I've been <a href="http://antal-szerb.netlify.app/" target="_blank">translating the work of Antal Szerb</a>, a Hungarian novelist and literary critic.</li>
-            <li><a href="https://racheledwards.notion.site/208f608da76d8082a2a4ea200a7d661f" target="_blank">A list of every animal I saw on safari</a> in June 2025, Botswana and Zambia</li>
-            <li><a href="https://eclecticletters.substack.com/cp/159180340" target="_blank">Eclectic Letters #8:</a> fantastical cities, a poisonous French novel, the first transatlantic telegraph cable, and more</li>
-            <li><a href="https://docs.google.com/document/d/1_Tr-OBvn_xT1xzQrS_eQv6J3Pi6oqyGBHE6nXX21gU0/" target="_blank">Ghosts In The Machine:</a> some AI-generated poems I prompted in March 2022, based on the text from Hamlet</li>
-            <li><a href="https://www.thelondonkitchencompany.co.uk/spitalfields" target="_blank">Photos of my kitchen</a>, which is my pride and joy</li>
-            <li><a href="https://racheledwards.notion.site/12cf608da76d805cb19ef3c6f960a273" target="_blank">A painting hanging in my living room</a> &amp; my attempts to trace its history</li>
-            <li>Sonnet competitions: <a href="https://accidents.substack.com/p/the-sonnet-competition-again" target="_blank">distance</a> and <a href="https://accidents.substack.com/p/the-sonnet-competition" target="_blank">salt</a></li>
-        </ul>
-    </section>
+    </div>
 
-    <section class="home-section" id="books-section">
-        <h2>Books</h2>
+    <!-- ── BOOKS VIEW ── -->
+    <div id="view-books" class="view">
+
         <div class="books-controls">
             <div class="year-tabs">
                 <button class="ytab active" data-year="2026">2026</button>
@@ -74,27 +93,43 @@
         <div id="books-display">
             <div class="books-loading">Loading…</div>
         </div>
-    </section>
+
+    </div>
 
 </div>
 
 <script>
 (function () {
+
+    // ── View switching (about / books) ──
+    window.show = function(view) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.site-nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById('view-' + view).classList.add('active');
+        document.getElementById('nav-' + view).classList.add('active');
+        if (view === 'books' && !booksLoaded) {
+            render(currentYear);
+            booksLoaded = true;
+        }
+    };
+
+    // ── Books loader ──
     const YEARS = ['2026', '2025', '2024'];
     const cache = {};
     let currentView = 'gallery';
+    let currentYear = '2026';
+    let booksLoaded = false;
 
-    // ── Fetch and parse book cards from a year page ──
     async function fetchYear(year) {
         if (cache[year]) return cache[year];
         const res = await fetch(year + '.html');
         const text = await res.text();
         const doc = new DOMParser().parseFromString(text, 'text/html');
         const cards = Array.from(doc.querySelectorAll('.book-card')).map(card => ({
-            img:    card.querySelector('.book-cover')?.getAttribute('src') || '',
-            alt:    card.querySelector('.book-cover')?.getAttribute('alt') || '',
-            title:  card.querySelector('.book-title')?.textContent.trim() || '',
-            notes:  card.querySelector('.book-notes')?.textContent.trim() || '',
+            img:      card.querySelector('.book-cover')?.getAttribute('src') || '',
+            alt:      card.querySelector('.book-cover')?.getAttribute('alt') || '',
+            title:    card.querySelector('.book-title')?.textContent.trim() || '',
+            notes:    card.querySelector('.book-notes')?.textContent.trim() || '',
             linkURL:  card.querySelector('.book-link a')?.getAttribute('href') || '',
             linkText: card.querySelector('.book-link a')?.textContent.replace(' →','').trim() || '',
         }));
@@ -102,7 +137,6 @@
         return cards;
     }
 
-    // ── Build gallery HTML ──
     function galleryHTML(books) {
         return '<div class="book-grid">' +
             books.map(b =>
@@ -115,7 +149,6 @@
         '</div>';
     }
 
-    // ── Build list HTML ──
     function listHTML(books) {
         return '<div class="book-list" style="display:block">' +
             books.map(b =>
@@ -127,7 +160,6 @@
         '</div>';
     }
 
-    // ── Render into the display div ──
     async function render(year) {
         const display = document.getElementById('books-display');
         display.innerHTML = '<div class="books-loading">Loading…</div>';
@@ -142,7 +174,6 @@
             }
 
             if (year === 'all') {
-                // Group by year with a label
                 display.innerHTML = YEARS.map(y => {
                     const yBooks = books.filter(b => b._year === y);
                     if (!yBooks.length) return '';
@@ -153,12 +184,11 @@
                 display.innerHTML = currentView === 'list' ? listHTML(books) : galleryHTML(books);
             }
         } catch (e) {
-            display.innerHTML = '<p style="color:#999;font-size:0.8rem;font-style:italic">Couldn\'t load books right now.</p>';
+            display.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;font-style:italic;font-family:var(--font-ui)">Couldn\'t load books right now.</p>';
         }
     }
 
-    // ── Wire up year tabs ──
-    let currentYear = '2026';
+    // ── Year tabs ──
     document.querySelectorAll('.ytab').forEach(btn => {
         btn.addEventListener('click', () => {
             const scrollY = window.scrollY;
@@ -169,7 +199,7 @@
         });
     });
 
-    // ── Wire up view toggle ──
+    // ── View toggle ──
     document.querySelectorAll('.vtab').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.vtab').forEach(b => b.classList.remove('active'));
@@ -178,9 +208,6 @@
             render(currentYear);
         });
     });
-
-    // ── Initial load ──
-    render('2026');
 
     function esc(str) {
         return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -191,6 +218,7 @@
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
     }
+
 })();
 </script>
 
