@@ -93,6 +93,11 @@ a:hover {
     color: var(--ink);
 }
 
+.masthead h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .site-nav {
     font-family: var(--font-ui);
     font-size: 13px;
@@ -252,6 +257,46 @@ a:hover {
     color: var(--muted);
     font-size: 12px;
     top: 3px;
+}
+
+/* ── WRITING PAGE ── */
+
+.writing-item {
+    margin-bottom: 18px;
+}
+
+.writing-item:last-child {
+    margin-bottom: 0;
+}
+
+.writing-title {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.writing-title a {
+    color: var(--ink);
+}
+
+.writing-title a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.writing-meta {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.writing-note {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 3px;
 }
 
 /* ── BOOKS SECTION (homepage) ── */
