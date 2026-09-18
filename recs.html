@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachel&#39;s Library — Recommendations</title>
+  <meta name="description" content="Books I recommend, with covers and notes — Rachel Edwards.">
+  <meta property="og:title" content="Rachel&#39;s Library — Recommendations">
+  <meta property="og:description" content="Books I recommend, with covers and notes — Rachel Edwards.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+   <div class="site-title">✦ Rachel Edwards ✦</div>
+  <nav class="nav-sections">
+    <div class="nav-links">
+        <a href="index.html">About</a>
+   <a href="2026.html">2026</a>
+   <a href="2025.html">2025</a>
+      <a href="2024.html">2024</a>
+    </div>
+  </nav>
+</div>
+
+<link rel="icon" type="image/x-icon" href="/books/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/books/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/books/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/books/apple-touch-icon.png">
+
+<script>
+  // Run this after the DOM is ready – if this script is at the bottom
+  // of the HTML body, that's already true.
+  (function() {
+    // 1. Work out the "current page" part
+    let here = window.location.pathname;
+    // keep only the last bit after the last slash
+    here = here.substring(here.lastIndexOf('/') + 1);
+
+    // If it's empty (e.g. URL is just "/"), assume index.html
+    if (!here) {
+      here = 'index.html';
+    }
+
+    // 2. Loop over all nav links
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      let href = a.getAttribute('href');
+
+      // Normalise href in the same way:
+      // - if href is "/" or empty, treat it as index.html
+      if (href === '/' || href === '') {
+        href = 'index.html';
+      }
+
+      if (href === here) {
+        a.classList.add('active');
+      }
+    });
+  })();
+</script>
+
+    <div class="page-heading">
+      <h1>Books I recommend</h1>
+    </div>
+    <div id="gallery" class="gallery">
+      <div class="book-card"><img src="images/maintenance-of-everything-part-one-by-stewart-brand.jpeg" alt="Cover of Maintenance: Of Everything: Part One, by Stewart Brand" class="book-cover" loading="lazy"><div class="book-title">Maintenance: Of Everything: Part One, by Stewart Brand</div><div class="book-notes">Modern paperbacks are perfect-bound, held together with glue that will melt in the heat if you try to read in a sauna. So if you want to read in the sauna, you need a book that&#39;s sewn together. This book is brilliant, and will do the job. </div></div>
+      <div class="book-card"><div class="book-title">The Hunchback of Notre-Dame, by Victor Hugo</div></div>
+      <div class="book-card"><img src="images/till-we-have-faces-by-cs-lewis.jpeg" alt="Cover of Till We Have Faces, by CS Lewis" class="book-cover" loading="lazy"><div class="book-title">Till We Have Faces, by CS Lewis</div><div class="book-notes">The myth of Cupid and Psyche, retold by Psyche&#39;s jealous elder sister. A glimpse into the terror, wonder, and monstrous ambiguity of faith, with an uncanny quality that&#39;s deeply unnerving. I sometimes felt like I was trespassing by reading it.</div></div>
+      <div class="book-card"><div class="book-title">The Lost Books of the Odyssey, by Zachary Mason</div><div class="book-notes">Comparisons to Invisible Cities are entirely justified. Like its protagonist, this book is complicated, clever, and never the same thing twice.</div></div>
+      <div class="book-card"><div class="book-title">Good Omens, by Neil Gaiman, Terry Pratchett</div></div>
+      <div class="book-card"><img src="images/journey-by-moonlight-by-antal-szerb.jpeg" alt="Cover of Journey By Moonlight, by Antal Szerb" class="book-cover" loading="lazy"><div class="book-title">Journey By Moonlight, by Antal Szerb</div><div class="book-notes">Finding himself restless and agitated on honeymoon in Italy, Mihály makes a series of unexpected decisions driven by fear, neuroticism, and nostalgia for his intense and unconventional teenage friendships. I read this in one day, totally hypnotised, and sat stunned and wounded for hours afterwards. </div></div>
+      <div class="book-card"><img src="images/tomorrow-and-tomorrow-and-tomorrow-by-gabrielle-zevin.jpeg" alt="Cover of Tomorrow and Tomorrow and Tomorrow, by Gabrielle Zevin" class="book-cover" loading="lazy"><div class="book-title">Tomorrow and Tomorrow and Tomorrow, by Gabrielle Zevin</div><div class="book-notes">A shockingly good book about video games, friendship, and things going wrong. Tried to read it in the living room on holiday, but started crying and had to exile myself.</div></div>
+      <div class="book-card"><img src="images/the-world-of-yesterday-by-stefan-zweig.jpeg" alt="Cover of The World of Yesterday, by Stefan Zweig" class="book-cover" loading="lazy"><div class="book-title">The World of Yesterday, by Stefan Zweig</div><div class="book-notes">Heartbreaking elegy for pre-WWI Vienna. Zweig writes very movingly about what was lost in the world wars, and his own statelessness after fleeing Austria. 
+</div><div class="book-link"><a href="https://eclecticletters.substack.com/i/153995300/the-works-of-stefan-zweig" target="_blank" rel="noopener noreferrer">My thoughts on Zweig →</a></div></div>
+      <div class="book-card"><img src="images/triumph-and-disaster-five-historical-miniatures-by-stefan-zweig.jpeg" alt="Cover of Triumph and Disaster: Five Historical Miniatures, by Stefan Zweig" class="book-cover" loading="lazy"><div class="book-title">Triumph and Disaster: Five Historical Miniatures, by Stefan Zweig</div><div class="book-notes">Another banger from Zweig. Scott&#39;s doomed expedition, the fall of Constantinople to the Ottomans, Lenin&#39;s journey to Russia in a sealed train – all excellent bedtime stories for aspiring Great Men of History.
+</div><div class="book-link"><a href="https://eclecticletters.substack.com/i/153995300/the-works-of-stefan-zweig" target="_blank" rel="noopener noreferrer">My thoughts on Zweig →</a></div></div>
+    </div>
+  </div>
+</body>
+</html>
