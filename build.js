@@ -44,6 +44,14 @@ const PAGES = [
     heading: 'Books I read in 2024',
     isList: false,
   },
+  {
+    file: 'recs.html',
+    table: 'Books read',
+    view: 'Recommended',
+    title: "Rachel's Library — Recommendations",
+    heading: 'Books I recommend',
+    isList: false,
+  },
 ];
 
 // ---- Fetch Airtable records ----

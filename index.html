@@ -177,6 +177,7 @@
                 <button class="ytab" data-year="2025">2025</button>
                 <button class="ytab" data-year="2024">2024</button>
                 <button class="ytab" data-year="all">All</button>
+                <button class="ytab" data-year="recs">Recs</button>
             </div>
             <div class="view-toggle">
                 <button class="vtab active" data-view="gallery">Gallery</button>
@@ -273,6 +274,8 @@
                     return `<div class="year-label">${y}</div>` +
                         (currentView === 'list' ? listHTML(yBooks) : galleryHTML(yBooks));
                 }).join('');
+            } else if (!books.length) {
+                display.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;font-style:italic;font-family:var(--font-ui)">Nothing here yet.</p>';
             } else {
                 display.innerHTML = currentView === 'list' ? listHTML(books) : galleryHTML(books);
             }
