@@ -468,7 +468,7 @@ a:hover {
     font-family: var(--font-prose);
     font-size: 15px;
     color: var(--ink);
-    flex: 0 0 45%;
+    flex: 0 0 33%;
     line-height: 1.4;
 }
 
