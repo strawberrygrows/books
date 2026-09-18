@@ -414,6 +414,18 @@ a:hover {
     gap: 14px;
 }
 
+/* Masonry stacking for the Recs tab (heights vary — not all have pictures) */
+.book-grid.book-masonry {
+    display: block;
+    columns: 3;
+    column-gap: 14px;
+}
+
+.book-grid.book-masonry .book {
+    break-inside: avoid;
+    margin-bottom: 16px;
+}
+
 .book-grid .book img {
     width: 100%;
     aspect-ratio: 1/1;
@@ -666,6 +678,10 @@ body:has(.gallery) {
 
     .book-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book-grid.book-masonry {
+        columns: 2;
     }
 
     .container {
