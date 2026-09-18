@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rachel Edwards</title>
+    <meta name="description" content="Rachel Edwards — books, theatre, translation, and other projects. I like joining book clubs and making things happen. I live in London.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rachel Edwards">
+    <meta property="og:description" content="Books, theatre, translation, and other projects. I like joining book clubs and making things happen.">
+    <meta property="og:url" content="https://strawberrygrows.github.io/books/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -12,7 +17,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/books/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/books/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/books/apple-touch-icon.png">
-    <link rel="manifest" href="/books/site.webmanifest">
 </head>
 <body>
 <div class="home-container">
@@ -22,6 +26,7 @@
         <nav class="site-nav">
             <a id="nav-about" class="active" href="#about" onclick="show('about'); return false;">about</a>
             <a id="nav-books" href="#books" onclick="show('books'); return false;">books</a>
+            <a id="nav-mine" href="#mine" onclick="show('mine'); return false;">mine</a>
             <a id="nav-links" href="#links" onclick="show('links'); return false;">links</a>
         </nav>
     </header>
@@ -32,12 +37,10 @@
         <section class="home-section intro-section">
             <div class="about-body">
                 <div class="intro-left">
-                    <p class="intro-text">Hi, I'm Rachel. I like joining book clubs and making things happen. I live in London.</p>
+                    <p class="intro-text">Hi, I'm Rachel. I like joining book clubs and making things happen. I work for Stripe, doing operations for <a href="https://worksinprogress.co/print" target="_blank">Works in Progress</a> magazine, and events for <a href="https://press.stripe.com/" target="_blank">Stripe Press</a>, a book publisher. I live in London.</p>
                     <div class="project-links">
                         <a href="https://worksinprogress.co/print" target="_blank">Works in Progress magazine in print</a>
                         <a href="https://press.stripe.com/maintenance-part-one" target="_blank">Maintenance: Of Everything, Part One</a>
-                        <a href="https://antalszerb.com/essay/books-and-youth/" target="_blank">Books and Youth: An Elegy</a>
-                        <a href="https://accidents.substack.com/p/shakespeare-in-italy" target="_blank">Shakespeare in Italy</a>
                         <a href="https://antalszerb.com" target="_blank">Half-Understood Things</a>
                     </div>
                 </div>
@@ -56,34 +59,16 @@
             </div>
         </section>
 
-        <section class="home-section">
-            <h2>Work</h2>
-            <p>I work for Stripe, doing operations for <a href="https://worksinprogress.co/print" target="_blank">Works in Progress</a> magazine, and events for <a href="https://press.stripe.com/" target="_blank">Stripe Press</a>, a book publisher.</p>
-            <p>Before that, I worked for Longview Philanthropy, advised the Treasury Select Committee, and did a few different jobs at the Bank of England.</p>
-        </section>
-
-        <section class="home-section">
-            <h2>Giving</h2>
-            <p>I've signed the <a href="https://www.givingwhatwecan.org/" target="_blank">Giving What We Can</a> pledge, committing myself to giving 10% of my income to effective charity, for life. Charities I donate to include the <a href="https://www.againstmalaria.com/" target="_blank">Against Malaria Foundation</a>, <a href="https://ourworldindata.org/" target="_blank">Our World In Data</a>, the <a href="https://leadelimination.org/" target="_blank">Lead Exposure Elimination Project</a>, <a href="https://www.newincentives.org/" target="_blank">New Incentives</a>, and <a href="https://savelife.in.ua/en/" target="_blank">Come Back Alive</a>.</p>
-        </section>
-
-        <section class="home-section">
-            <h2>Miscellany</h2>
-            <ul>
-                <li><a href="https://racheledwards.notion.site/208f608da76d8082a2a4ea200a7d661f" target="_blank">A list of every animal I saw on safari</a> in June 2025, Botswana and Zambia</li>
-                <li>My <a href="https://x.com/underthenettle/status/1876347419509801437?s=20" target="_blank">green kitchen</a> and my <a href="https://x.com/underthenettle/status/2072317869736484879?s=20" target="_blank">favourite lamp</a></li>
-            </ul>
-        </section>
 
     </div>
 
-    <!-- ── LINKS VIEW ── -->
-    <div id="view-links" class="view">
+    <!-- ── MINE VIEW ── -->
+    <div id="view-mine" class="view">
 
         <section class="home-section">
             <h2>My projects</h2>
             <div class="writing-item">
-                <div class="writing-title"><a href="https://antalszerb.com/about/" target="_blank">Half-Understood Things</a></div>
+                <div class="writing-title"><a href="https://antalszerb.com/" target="_blank">Half-Understood Things</a></div>
                 <div class="writing-meta">antalszerb.com · ongoing</div>
                 <div class="writing-note">My project to translate the untranslated works of Antal Szerb.</div>
             </div>
@@ -92,19 +77,28 @@
         <section class="home-section">
             <h2>Things I've written</h2>
             <div class="writing-item">
+                <div class="writing-title"><a href="https://eclecticletters.substack.com/cp/159180340" target="_blank">Eclectic Letters #8</a></div>
+                <div class="writing-meta">Eclectic Letters · 2025</div>
+                <div class="writing-note">Fantastical cities, a poisonous French novel, and the first transatlantic telegraph cable.</div>
+            </div>
+            <div class="writing-item">
                 <div class="writing-title"><a href="https://accidents.substack.com/p/shakespeare-in-italy" target="_blank">Shakespeare in Italy</a></div>
                 <div class="writing-meta">Rare Accidents · 2023</div>
                 <div class="writing-note">Finishing my grandfather's research into the Italian plays.</div>
             </div>
             <div class="writing-item">
-                <div class="writing-title"><a href="https://racheledwards.notion.site/12cf608da76d805cb19ef3c6f960a273" target="_blank">A painting hanging in my living room</a></div>
-                <div class="writing-meta">Notion · ongoing</div>
-                <div class="writing-note">My attempts to trace its history.</div>
+                <div class="writing-title"><a href="https://accidents.substack.com/p/a-little-life" target="_blank">A Little Life ★☆☆☆☆</a></div>
+                <div class="writing-meta">Rare Accidents · 2023</div>
+                <div class="writing-note">A relentless pile-up of pain and physical suffering.</div>
             </div>
             <div class="writing-item">
-                <div class="writing-title"><a href="https://eclecticletters.substack.com/cp/159180340" target="_blank">Eclectic Letters #8</a></div>
-                <div class="writing-meta">Eclectic Letters · 2025</div>
-                <div class="writing-note">Fantastical cities, a poisonous French novel, and the first transatlantic telegraph cable.</div>
+                <div class="writing-title"><a href="https://accidents.substack.com/p/the-inseparables" target="_blank">The Inseparables ★★★★☆</a></div>
+                <div class="writing-meta">Rare Accidents · 2025</div>
+                <div class="writing-note">A tender and faithful adaptation of Simone de Beauvoir's lost novel.</div>
+            </div>
+            <div class="writing-item">
+                <div class="writing-title">More theatre reviews</div>
+                <div class="writing-note"><a href="https://everything-theatre.co.uk/author/rachel-edwards" target="_blank">Everything Theatre</a> · <a href="https://theatreweekly.com/author/racheledwards/" target="_blank">Theatre Weekly</a> · <a href="https://kingdomforastage.wordpress.com/" target="_blank">Wordpress archive</a></div>
             </div>
         </section>
 
@@ -118,29 +112,6 @@
         </section>
 
         <section class="home-section">
-            <h2>Theatre</h2>
-            <div class="writing-item">
-                <div class="writing-title"><a href="https://accidents.substack.com/" target="_blank">Rare Accidents</a></div>
-                <div class="writing-meta">Substack</div>
-                <div class="writing-note">My theatre newsletter.</div>
-            </div>
-            <div class="writing-item">
-                <div class="writing-title"><a href="https://accidents.substack.com/p/a-little-life" target="_blank">A Little Life ★☆☆☆☆</a></div>
-                <div class="writing-meta">Rare Accidents · 2023</div>
-                <div class="writing-note">"A relentless pile-up of pain and physical suffering." One star.</div>
-            </div>
-            <div class="writing-item">
-                <div class="writing-title"><a href="https://accidents.substack.com/p/the-inseparables" target="_blank">The Inseparables ★★★★☆</a></div>
-                <div class="writing-meta">Rare Accidents · 2025</div>
-                <div class="writing-note">A tender and faithful adaptation of Simone de Beauvoir's lost novel.</div>
-            </div>
-            <div class="writing-item">
-                <div class="writing-title">More reviews</div>
-                <div class="writing-meta"><a href="https://everything-theatre.co.uk/author/rachel-edwards" target="_blank">Everything Theatre</a> · <a href="https://theatreweekly.com/author/racheledwards/" target="_blank">Theatre Weekly</a> · the Reviews Hub · <a href="https://kingdomforastage.wordpress.com/" target="_blank">Wordpress archive</a></div>
-            </div>
-        </section>
-
-        <section class="home-section">
             <h2>Poetry</h2>
             <div class="writing-item">
                 <div class="writing-title"><a href="https://accidents.substack.com/p/the-sonnet-competition-again" target="_blank">The Sonnet Competition: Distance</a></div>
@@ -149,6 +120,41 @@
             <div class="writing-item">
                 <div class="writing-title"><a href="https://accidents.substack.com/p/the-sonnet-competition" target="_blank">The Sonnet Competition: Salt</a></div>
                 <div class="writing-meta">Rare Accidents · 2023</div>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <h2>Bits</h2>
+            <div class="writing-item">
+                <div class="writing-title"><a href="https://racheledwards.notion.site/12cf608da76d805cb19ef3c6f960a273" target="_blank">A painting hanging in my living room</a></div>
+                <div class="writing-meta">Notion · ongoing</div>
+                <div class="writing-note">My attempts to trace its history.</div>
+            </div>
+            <div class="writing-item">
+                <div class="writing-title"><a href="https://racheledwards.notion.site/208f608da76d8082a2a4ea200a7d661f" target="_blank">Every animal I saw on safari</a></div>
+                <div class="writing-meta">Notion · June 2025</div>
+                <div class="writing-note">Botswana and Zambia.</div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ── LINKS VIEW ── -->
+    <div id="view-links" class="view">
+
+        <section class="home-section">
+            <h2>Calls to action</h2>
+            <div class="writing-item">
+                <div class="writing-title"><a href="https://accidents.substack.com/" target="_blank">Subscribe to Rare Accidents</a></div>
+                <div class="writing-note">Subscribe to my Substack to read occasional theatre reviews, sonnet competitions, etc.</div>
+            </div>
+            <div class="writing-item">
+                <div class="writing-title"><a href="https://worksinprogress.co/print" target="_blank">Read Works in Progress in print</a></div>
+                <div class="writing-note">The magazine for people who care about economic growth. Subscribe to find out why there are <a href="https://worksinprogress.co/issue/albertas-war-on-rats/" target="_blank">no rats in Alberta</a>, why <a href="https://worksinprogress.co/issue/how-thailand-resisted-colonization/" target="_blank">Thailand was never colonised</a> and how <a href="https://worksinprogress.co/issue/the-invention-of-buses/" target="_blank">buses were invented</a>; and to be invited to our parties.</div>
+            </div>
+            <div class="writing-item">
+                <div class="writing-title"><a href="https://www.givingwhatwecan.org/" target="_blank">Giving What We Can</a></div>
+                <div class="writing-note">I've signed the 10% pledge, committing myself to giving 10% of my income to effective charity, for life. Maybe you should do the same. Charities I donate to: <a href="https://www.againstmalaria.com/" target="_blank">Against Malaria Foundation</a> · <a href="https://ourworldindata.org/" target="_blank">Our World In Data</a> · <a href="https://leadelimination.org/" target="_blank">Lead Exposure Elimination Project</a> · <a href="https://www.newincentives.org/" target="_blank">New Incentives</a> · <a href="https://savelife.in.ua/en/" target="_blank">Come Back Alive</a></div>
             </div>
         </section>
 
@@ -298,7 +304,7 @@
 
     // Open a view directly from the URL hash (e.g. index.html#writing)
     const initial = location.hash.replace('#', '');
-    if (initial === 'books' || initial === 'links') show(initial);
+    if (initial === 'books' || initial === 'mine' || initial === 'links') show(initial);
 
     function esc(str) {
         return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');

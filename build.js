@@ -44,24 +44,6 @@ const PAGES = [
     heading: 'Books I read in 2024',
     isList: false,
   },
-  {
-    file: 'library.html',               // was other.html previously
-    table: 'Books read',
-    view: 'Library',
-    title: "Rachel's Library — Library",
-    heading: 'Library',
-    isList: true,
-  },
-  // Anti-Library placeholder: create a view in Airtable when ready
-  // or point it at some view that already exists.
-  {
-    file: 'anti-library.html',
-    table: 'Books read',
-    view: 'Anti-Library',               // make sure this view exists in Airtable
-    title: "Rachel's Library — Anti-Library",
-    heading: 'Anti-Library',
-    isList: true,
-  },
 ];
 
 // ---- Fetch Airtable records ----
@@ -140,6 +122,7 @@ function generateBookCard(record) {
 function generateHTML(page, booksHTML) {
   const { title, heading, isList } = page;
   const bodyClass = isList ? ' class="list-view"' : '';
+  const description = `${escapeHtml(heading)}, with covers and notes — Rachel Edwards.`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -147,13 +130,16 @@ function generateHTML(page, booksHTML) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${description}">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${description}">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body${bodyClass}>
   <div class="container">
     ${header}
     <div class="page-heading">
-      <h2>${escapeHtml(heading)}</h2>
+      <h1>${escapeHtml(heading)}</h1>
     </div>
     <div id="gallery" class="gallery">
       ${booksHTML}
