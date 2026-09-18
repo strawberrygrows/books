@@ -26,7 +26,7 @@
         <nav class="site-nav">
             <a id="nav-about" class="active" href="#about" onclick="show('about'); return false;">about</a>
             <a id="nav-books" href="#books" onclick="show('books'); return false;">books</a>
-            <a id="nav-mine" href="#mine" onclick="show('mine'); return false;">mine</a>
+            <a id="nav-writing" href="#writing" onclick="show('writing'); return false;">writing</a>
             <a id="nav-links" href="#links" onclick="show('links'); return false;">calls to action</a>
         </nav>
     </header>
@@ -63,7 +63,7 @@
     </div>
 
     <!-- ── MINE VIEW ── -->
-    <div id="view-mine" class="view">
+    <div id="view-writing" class="view">
 
         <section class="home-section">
             <h2>My projects</h2>
@@ -301,7 +301,7 @@
 
     // Open a view directly from the URL hash (e.g. index.html#writing)
     const initial = location.hash.replace('#', '');
-    if (initial === 'books' || initial === 'mine' || initial === 'links') show(initial);
+    if (initial === 'books' || initial === 'writing' || initial === 'links') show(initial);
 
     function esc(str) {
         return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
