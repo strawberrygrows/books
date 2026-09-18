@@ -44,14 +44,16 @@ const PAGES = [
     heading: 'Books I read in 2024',
     isList: false,
   },
-  {
-    file: 'recs.html',
-    table: 'Books read',
-    view: 'Recommended',
-    title: "Rachel's Library — Recommendations",
-    heading: 'Books I recommend',
-    isList: false,
-  },
+  // Recs page parked until the content is ready — uncomment to resurrect
+  // (also uncomment the Recs tab button in index.html):
+  // {
+  //   file: 'recs.html',
+  //   table: 'Books read',
+  //   view: 'Recommended',
+  //   title: "Rachel's Library — Recommendations",
+  //   heading: 'Books I recommend',
+  //   isList: false,
+  // },
 ];
 
 // ---- Fetch Airtable records ----
