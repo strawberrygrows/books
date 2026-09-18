@@ -84,6 +84,15 @@
             margin-top: 6px;
             line-height: 1.5;
         }
+        figcaption a {
+            color: var(--muted);
+            text-decoration: underline;
+            text-decoration-color: var(--rule);
+            text-underline-offset: 2px;
+        }
+        figcaption a:hover {
+            color: var(--ink);
+        }
         @media (max-width: 600px) {
             .figure-row {
                 flex-direction: column;
@@ -155,7 +164,7 @@
 
         <figure>
             <img src="images/ancestor/ancestor-6.jpg" alt="A table of canvas marks from T Brown of High Holborn, including the April 1837 mark">
-            <figcaption>Thanks to Benjamin on Twitter for sending me this table!</figcaption>
+            <figcaption>Thanks to <a href="https://x.com/bschne/status/1775133491841167764" target="_blank">Benjamin on Twitter</a> for sending me this table!</figcaption>
         </figure>
     </div>
 
