@@ -363,32 +363,6 @@ a:hover {
     color: var(--ink);
 }
 
-.view-toggle {
-    display: flex;
-    gap: 14px;
-}
-
-.vtab {
-    background: none;
-    border: none;
-    border-bottom: 1px solid transparent;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    color: var(--muted);
-    cursor: pointer;
-    padding: 0;
-    transition: all 0.1s;
-}
-
-.vtab.active {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
-}
-
-.vtab:hover:not(.active) {
-    color: var(--ink);
-}
-
 .year-label {
     font-family: var(--font-ui);
     font-size: 10.5px;
@@ -450,39 +424,6 @@ a:hover {
     color: var(--muted);
     line-height: 1.5;
 }
-
-/* Book list (homepage) */
-.book-list {
-    display: none;
-}
-
-.book-list .brow {
-    border-bottom: 1px solid var(--rule);
-    padding: 10px 0;
-    display: flex;
-    gap: 14px;
-    align-items: baseline;
-}
-
-.book-list .brow .btitle {
-    font-family: var(--font-prose);
-    font-size: 15px;
-    color: var(--ink);
-    flex: 0 0 33%;
-    line-height: 1.4;
-}
-
-.book-list .brow .bnotes {
-    font-family: var(--font-prose);
-    font-size: 14px;
-    color: var(--muted);
-    flex: 1;
-    line-height: 1.6;
-}
-
-/* list mode: swap grid/list */
-.list-mode .book-grid { display: none; }
-.list-mode .book-list { display: block; }
 
 /* ── YEAR PAGES (2024/2025/2026) ── */
 

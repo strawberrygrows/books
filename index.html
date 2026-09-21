@@ -157,10 +157,6 @@
                 <button class="ytab" data-year="recs">Recs</button>
                 -->
             </div>
-            <div class="view-toggle">
-                <button class="vtab active" data-view="gallery">Gallery</button>
-                <button class="vtab" data-view="list">List</button>
-            </div>
         </div>
         <div id="books-display">
             <div class="books-loading">Loading…</div>
@@ -188,7 +184,6 @@
     // ── Books loader ──
     const YEARS = ['2026', '2025', '2024'];
     const cache = {};
-    let currentView = 'gallery';
     let currentYear = '2026';
     let booksLoaded = false;
 
@@ -221,17 +216,6 @@
         '</div>';
     }
 
-    function listHTML(books) {
-        return '<div class="book-list" style="display:block">' +
-            books.map(b =>
-                `<div class="brow">` +
-                `<div class="btitle">${escHtml(b.title)}</div>` +
-                (b.notes ? `<div class="bnotes">${escHtml(b.notes)}</div>` : '') +
-                `</div>`
-            ).join('') +
-        '</div>';
-    }
-
     async function render(year) {
         const display = document.getElementById('books-display');
         display.innerHTML = '<div class="books-loading">Loading…</div>';
@@ -249,13 +233,12 @@
                 display.innerHTML = YEARS.map(y => {
                     const yBooks = books.filter(b => b._year === y);
                     if (!yBooks.length) return '';
-                    return `<div class="year-label">${y}</div>` +
-                        (currentView === 'list' ? listHTML(yBooks) : galleryHTML(yBooks));
+                    return `<div class="year-label">${y}</div>` + galleryHTML(yBooks);
                 }).join('');
             } else if (!books.length) {
                 display.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;font-style:italic;font-family:var(--font-ui)">Nothing here yet.</p>';
             } else {
-                display.innerHTML = currentView === 'list' ? listHTML(books) : galleryHTML(books, year === 'recs');
+                display.innerHTML = galleryHTML(books, year === 'recs');
             }
         } catch (e) {
             display.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;font-style:italic;font-family:var(--font-ui)">Couldn\'t load books right now.</p>';
@@ -270,16 +253,6 @@
             btn.classList.add('active');
             currentYear = btn.dataset.year;
             render(currentYear).then(() => window.scrollTo(0, scrollY));
-        });
-    });
-
-    // ── View toggle ──
-    document.querySelectorAll('.vtab').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.vtab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentView = btn.dataset.view;
-            render(currentYear);
         });
     });
 
