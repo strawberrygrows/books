@@ -23,6 +23,11 @@ jobs:
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
         run: node download-images.js
+
+      - name: Shrink newly downloaded covers for the web
+        run: |
+          sudo apt-get install -y -q imagemagick >/dev/null 2>&1 || true
+          mogrify -resize '600x900>' -quality 82 images/*.jpeg || true
       
       - name: Build site
         env:
