@@ -223,16 +223,9 @@
   ],
   "2026": [
    {
-    "img": "images/the-christians-and-the-fall-of-rome-by-edward-gibbon.jpeg",
-    "title": "The Christians and the Fall of Rome, by Edward Gibbon",
-    "notes": "Abridged edition of The Decline and Fall of the Roman Empire. Amusing book, teetering on the edge of a secular worldview. ",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/common-sense-by-thomas-paine.jpeg",
-    "title": "Common Sense, by Thomas Paine",
-    "notes": "Great fun, and I was totally convinced. American independence was the right move. Paine definitely has an annoying personality though.",
+    "img": "images/a-martin-s-guide-to-budapest-by-antal-szerb.jpeg",
+    "title": "A Martin's Guide to Budapest, by Antal Szerb",
+    "notes": "Charming little book about Budapest streets. ",
     "linkURL": "",
     "linkText": ""
    },
@@ -244,9 +237,30 @@
     "linkText": ""
    },
    {
+    "img": "images/the-art-of-the-publisher-by-roberto-calasso.jpeg",
+    "title": "The Art of the Publisher, by Roberto Calasso",
+    "notes": "A gorgeous set of essays articulating Calasso's vision of publishing; you can really feel his passion, bordering on obsession. He also makes some interesting arguments against ebooks that have been completely overtaken by events. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
     "img": "images/a-vindication-of-the-rights-of-women-by-mary-wollstonecraft.jpeg",
     "title": "A Vindication of the Rights of Women, by Mary Wollstonecraft",
     "notes": "For such a famous feminist, Mary Wollstonecraft doesn't seem particularly fond of women. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/common-sense-by-thomas-paine.jpeg",
+    "title": "Common Sense, by Thomas Paine",
+    "notes": "Great fun, and I was totally convinced. American independence was the right move. Paine definitely has an annoying personality though.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-christians-and-the-fall-of-rome-by-edward-gibbon.jpeg",
+    "title": "The Christians and the Fall of Rome, by Edward Gibbon",
+    "notes": "Abridged edition of The Decline and Fall of the Roman Empire. Amusing book, teetering on the edge of a secular worldview. ",
     "linkURL": "",
     "linkText": ""
    },
@@ -258,13 +272,6 @@
     "linkText": ""
    },
    {
-    "img": "images/the-social-contract-abridged-by-jean-jacques-rousseau.jpeg",
-    "title": "The Social Contract (abridged), by Jean-Jacques Rousseau",
-    "notes": "Rousseau's ideal state is like a delicate little orchid that could potentially survive for a few weeks under perfect conditions. And I really cannot forgive him for abandoning his five babies to die & then writing a book about how to raise children.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
     "img": "images/oliver-vii-by-antal-szerb.jpeg",
     "title": "Oliver VII, by Antal Szerb",
     "notes": "Oliver VII, king of a small impoverished European nation, carefully orchestrates a coup against himself, and flees to Venice. While there, he falls in with a group of conmen, who propose a daring scam: for their new friend to impersonate the exiled king. Hilarity ensues.",
@@ -272,9 +279,9 @@
     "linkText": ""
    },
    {
-    "img": "images/wuthering-heights-by-emily-bront.jpeg",
-    "title": "Wuthering Heights, by Emily Brontë",
-    "notes": "The classic female fantasy (a man is obsessed with you) meets the classic English nightmare (your next-door neighbour hates you). A very charismatic novel – readable, lots to contemplate, and lots of lines that would be romantic if they had all been better behaved. \n",
+    "img": "images/the-social-contract-abridged-by-jean-jacques-rousseau.jpeg",
+    "title": "The Social Contract (abridged), by Jean-Jacques Rousseau",
+    "notes": "Rousseau's ideal state is like a delicate little orchid that could potentially survive for a few weeks under perfect conditions. And I really cannot forgive him for abandoning his five babies to die & then writing a book about how to raise children.",
     "linkURL": "",
     "linkText": ""
    },
@@ -282,6 +289,13 @@
     "img": "images/maintenance-of-everything-part-one-by-stewart-brand.jpeg",
     "title": "Maintenance: Of Everything: Part One, by Stewart Brand",
     "notes": "Modern paperbacks are perfect-bound, held together with glue that will melt in the heat if you try to read in a sauna. So if you want to read in the sauna, you need a book that's sewn together. This book is brilliant, and will do the job. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/wuthering-heights-by-emily-bront.jpeg",
+    "title": "Wuthering Heights, by Emily Brontë",
+    "notes": "The classic female fantasy (a man is obsessed with you) meets the classic English nightmare (your next-door neighbour hates you). A very charismatic novel – readable, lots to contemplate, and lots of lines that would be romantic if they had all been better behaved. \n",
     "linkURL": "",
     "linkText": ""
    },
