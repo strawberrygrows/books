@@ -205,6 +205,18 @@
         '</div>';
     }
 
+    // Recs are text-only mini-essays: one column, title then full-width note
+    function recsHTML(books) {
+        return '<div class="recs-list">' +
+            books.map(b =>
+                `<div class="rec-row">` +
+                `<div class="rec-title">${escHtml(b.title)}</div>` +
+                (b.notes ? `<div class="rec-notes">${escHtml(b.notes.trim())}</div>` : '') +
+                `</div>`
+            ).join('') +
+        '</div>';
+    }
+
     async function render(year) {
         const display = document.getElementById('books-display');
         display.innerHTML = '<div class="books-loading">Loading…</div>';
@@ -227,9 +239,7 @@
             } else if (!books.length) {
                 display.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;font-style:italic;font-family:var(--font-ui)">Nothing here yet.</p>';
             } else {
-                // Recs render text-only (no cover images) in the masonry layout
-                if (year === 'recs') books = books.map(b => ({ ...b, img: '' }));
-                display.innerHTML = galleryHTML(books, year === 'recs');
+                display.innerHTML = year === 'recs' ? recsHTML(books) : galleryHTML(books);
             }
         } catch (e) {
             display.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;font-style:italic;font-family:var(--font-ui)">Couldn\'t load books right now.</p>';

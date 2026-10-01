@@ -388,16 +388,29 @@ a:hover {
     gap: 14px;
 }
 
-/* Masonry stacking for the Recs tab (heights vary — not all have pictures) */
-.book-grid.book-masonry {
-    display: block;
-    columns: 3;
-    column-gap: 14px;
+/* Recs: a single-column reading list of text-only recommendations */
+.rec-row {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
 }
 
-.book-grid.book-masonry .book {
-    break-inside: avoid;
-    margin-bottom: 16px;
+.rec-row:last-child {
+    border-bottom: none;
+}
+
+.rec-title {
+    font-family: var(--font-prose);
+    font-size: 14.5px;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+.rec-notes {
+    font-family: var(--font-prose);
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--muted);
+    white-space: pre-line;
 }
 
 .book-grid .book img {
