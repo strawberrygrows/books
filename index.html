@@ -188,20 +188,11 @@
     let booksLoaded = false;
 
     async function fetchYear(year) {
-        if (cache[year]) return cache[year];
-        const res = await fetch(year + '.html');
-        const text = await res.text();
-        const doc = new DOMParser().parseFromString(text, 'text/html');
-        const cards = Array.from(doc.querySelectorAll('.book-card')).map(card => ({
-            img:      card.querySelector('.book-cover')?.getAttribute('src') || '',
-            alt:      card.querySelector('.book-cover')?.getAttribute('alt') || '',
-            title:    card.querySelector('.book-title')?.textContent.trim() || '',
-            notes:    card.querySelector('.book-notes')?.textContent.trim() || '',
-            linkURL:  card.querySelector('.book-link a')?.getAttribute('href') || '',
-            linkText: card.querySelector('.book-link a')?.textContent.replace(' →','').trim() || '',
-        }));
-        cache[year] = cards;
-        return cards;
+        if (!cache.data) {
+            const res = await fetch('books.json');
+            cache.data = (await res.json()).years || {};
+        }
+        return (cache.data[year] || []).map(b => ({ alt: 'Cover of ' + b.title, ...b }));
     }
 
     function galleryHTML(books, masonry) {

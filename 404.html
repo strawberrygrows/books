@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachel Edwards / 404</title>
+    <title>Rachel Edwards — 404</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <style>
+        .lost {
+            border-top: 1px solid var(--rule);
+            padding-top: 26px;
+        }
+        .lost h2 {
+            font-family: var(--font-display);
+            font-size: 19px;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+        .lost p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333330;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header will be injected here -->
-        <div id="header-placeholder"></div>
+<div class="home-container">
 
-        <div class="blocks-container">
-            <div class="block block--wide">
-                <h2>Oops</h2>
-                <p>Looks like that was a broken link. <a href="index.html">Click here to go home.</a> </p>
-            </div>
+    <header class="masthead">
+        <h1><a href="index.html">Rachel Edwards</a></h1>
+        <nav class="site-nav">
+            <a href="index.html">about</a>
+            <a href="index.html#books">books</a>
+            <a href="index.html#writing">writing</a>
+            <a href="index.html#links">calls to action</a>
+        </nav>
+    </header>
 
-        
-    <script>
-      fetch('partials/header.html')
-        .then(r => r.text())
-        .then(html => {
-          document.getElementById('header-placeholder').innerHTML = html;
-        });
-    </script>
+    <div class="lost">
+        <h2>Page not found</h2>
+        <p>Looks like that was a broken link. <a href="index.html">Go home</a>.</p>
+    </div>
+
+</div>
 </body>
 </html>

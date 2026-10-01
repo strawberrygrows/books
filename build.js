@@ -1,59 +1,27 @@
 // build.js
-// Generate fully static HTML pages using Airtable data.
+// Fetch book data from Airtable and write books.json, which index.html's
+// books tab reads directly. No HTML pages are generated any more.
 
 const fs = require('fs');
+const path = require('path');
 
 const BASE_ID = 'app12LraPjbTp4fHG';
 const AIRTABLE_TOKEN = process.env.AIRTABLE_TOKEN;
 
-// Read the shared header partial once
-const header = fs.readFileSync('partials/header.html', 'utf8');
-
-// Require a token
 if (!AIRTABLE_TOKEN) {
   console.error('❌ Missing AIRTABLE_TOKEN. Set it locally or in GitHub Actions secrets.');
   process.exit(1);
 }
 
-// ---- PAGES TO GENERATE ----
-// Adjust view names / filenames if needed.
-const PAGES = [
-
-  {
-    file: '2026.html',
-    table: 'Books read',
-    view: '2026',
-    title: "Rachel's Library — 2026",
-    heading: 'Books I read in 2026',
-    isList: false,
-  },
-
-    {
-    file: '2025.html',
-    table: 'Books read',
-    view: '2025',
-    title: "Rachel's Library — 2025",
-    heading: 'Books I read in 2025',
-    isList: false,
-  },
-  {
-    file: '2024.html',
-    table: 'Books read',
-    view: '2024',
-    title: "Rachel's Library — 2024",
-    heading: 'Books I read in 2024',
-    isList: false,
-  },
-  // Recs page parked until the content is ready — uncomment to resurrect
+// ---- VIEWS TO FETCH ----
+// Each key becomes a year tab in index.html's books view.
+const VIEWS = [
+  { key: '2026', table: 'Books read', view: '2026' },
+  { key: '2025', table: 'Books read', view: '2025' },
+  { key: '2024', table: 'Books read', view: '2024' },
+  // Recs parked until the content is ready — uncomment to resurrect
   // (also uncomment the Recs tab button in index.html):
-  // {
-  //   file: 'recs.html',
-  //   table: 'Books read',
-  //   view: 'Recommended',
-  //   title: "Rachel's Library — Recommendations",
-  //   heading: 'Books I recommend',
-  //   isList: false,
-  // },
+  // { key: 'recs', table: 'Books read', view: 'Recommended' },
 ];
 
 // ---- Fetch Airtable records ----
@@ -84,18 +52,14 @@ async function fetchBooks(tableName, viewName) {
   return data.records || [];
 }
 
-// ---- Build one book card ----
-function generateBookCard(record) {
+// ---- Convert one record to a plain book object ----
+function toBook(record) {
   const f = record.fields || {};
   const titleAuthor = f['Title author'] || 'Untitled';
-  const notes = f['Notes'] || '';
-  const linkURL = f['Link URL'] || '';
-  const linkText = f['Link text'] || '';
 
-    let img = '';
+  let img = '';
   if (f['Cover image']?.[0]) {
-    const titleAuthor = f['Title author'] || 'untitled';
-    const extension = require('path').extname(f['Cover image'][0].filename || '.jpg');
+    const extension = path.extname(f['Cover image'][0].filename || '.jpg');
     const filename = titleAuthor
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
@@ -103,98 +67,35 @@ function generateBookCard(record) {
       .substring(0, 100) + extension;
     img = `images/${filename}`;
   }
-  
-  let card = `<div class="book-card">`;
 
-  if (img) {
-    card += `<img src="${escapeAttr(img)}" alt="Cover of ${escapeHtml(
-      titleAuthor
-    )}" class="book-cover" loading="lazy">`;
-  }
-
-  card += `<div class="book-title">${escapeHtml(titleAuthor)}</div>`;
-
-  if (notes) {
-    card += `<div class="book-notes">${escapeHtml(notes)}</div>`;
-  }
-
-  if (linkURL && linkText) {
-    card += `<div class="book-link"><a href="${escapeAttr(
-      linkURL
-    )}" target="_blank" rel="noopener noreferrer">${escapeHtml(linkText)} →</a></div>`;
-  }
-
-  card += `</div>`;
-  return card;
-}
-
-// ---- Construct the full HTML page ----
-function generateHTML(page, booksHTML) {
-  const { title, heading, isList } = page;
-  const bodyClass = isList ? ' class="list-view"' : '';
-  const description = `${escapeHtml(heading)}, with covers and notes — Rachel Edwards.`;
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(title)}</title>
-  <meta name="description" content="${description}">
-  <meta property="og:title" content="${escapeHtml(title)}">
-  <meta property="og:description" content="${description}">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body${bodyClass}>
-  <div class="container">
-    ${header}
-    <div class="page-heading">
-      <h1>${escapeHtml(heading)}</h1>
-    </div>
-    <div id="gallery" class="gallery">
-      ${booksHTML}
-    </div>
-  </div>
-</body>
-</html>`;
-}
-
-// ---- Escaping helpers ----
-function escapeHtml(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function escapeAttr(str) {
-  return escapeHtml(str);
+  return {
+    img,
+    title: titleAuthor,
+    notes: f['Notes'] || '',
+    linkURL: f['Link URL'] || '',
+    linkText: f['Link text'] || '',
+  };
 }
 
 // ---- Main build ----
 async function buildSite() {
   console.log('Starting build...');
+  const years = {};
 
-  for (const page of PAGES) {
-    console.log(`Building ${page.file} (Airtable view: "${page.view}")...`);
-
+  for (const v of VIEWS) {
+    console.log(`Fetching "${v.view}"...`);
     try {
-      const records = await fetchBooks(page.table, page.view);
-      const bookCards = records.map(generateBookCard).join('\n      ');
-
-      const html = generateHTML(page, bookCards);
-      fs.writeFileSync(page.file, html);
-
-      console.log(`✓ ${page.file} generated with ${records.length} books`);
+      const records = await fetchBooks(v.table, v.view);
+      years[v.key] = records.map(toBook);
+      console.log(`✓ ${v.key}: ${records.length} books`);
     } catch (err) {
-      console.error(`✗ Failed to build ${page.file}:`, err.message);
+      console.error(`✗ Failed to fetch ${v.key}:`, err.message);
       process.exit(1);
     }
   }
 
-  console.log('Build complete!');
+  fs.writeFileSync('books.json', JSON.stringify({ years }, null, 1));
+  console.log('Build complete: books.json written.');
 }
 
 buildSite();

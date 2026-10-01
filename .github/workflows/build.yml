@@ -38,5 +38,5 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add images/ *.html
+          git add images/ books.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Weekly update: books and images" && git push)
