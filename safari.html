@@ -106,6 +106,15 @@
             columns: 2;
             column-gap: 14px;
         }
+        .pic-grid.balanced {
+            columns: auto;
+            display: flex;
+            gap: 14px;
+        }
+        .pic-col {
+            flex: 1;
+            min-width: 0;
+        }
         .pic-grid figure {
             margin: 0 0 14px;
             break-inside: avoid;
@@ -385,5 +394,33 @@
     </div>
 
 </div>
+
+<script>
+// Deal picture cards into two columns, always filling the shorter one,
+// so the order reads across and both columns end nearly level.
+// Runs when a section is first opened (cards in closed sections have no
+// measurable height), and skips the single-column mobile layout.
+function balanceGrids(root) {
+    if (window.matchMedia('(max-width: 600px)').matches) return;
+    root.querySelectorAll('.pic-grid:not(.balanced)').forEach(grid => {
+        const figs = Array.from(grid.children);
+        const heights = figs.map(f => f.offsetHeight);
+        if (!heights.some(h => h > 0)) return;
+        const colA = document.createElement('div');
+        const colB = document.createElement('div');
+        colA.className = colB.className = 'pic-col';
+        grid.classList.add('balanced');
+        grid.append(colA, colB);
+        let hA = 0, hB = 0;
+        figs.forEach((f, i) => {
+            if (hA <= hB) { colA.append(f); hA += heights[i]; }
+            else { colB.append(f); hB += heights[i]; }
+        });
+    });
+}
+document.querySelectorAll('details.cat').forEach(d => {
+    d.addEventListener('toggle', () => { if (d.open) balanceGrids(d); });
+});
+</script>
 </body>
 </html>
