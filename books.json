@@ -1,226 +1,5 @@
 {
  "years": {
-  "2026": [
-   {
-    "img": "images/the-christians-and-the-fall-of-rome-by-edward-gibbon.jpeg",
-    "title": "The Christians and the Fall of Rome, by Edward Gibbon",
-    "notes": "Abridged edition of The Decline and Fall of the Roman Empire. Amusing book, teetering on the edge of a secular worldview.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/common-sense-by-thomas-paine.jpeg",
-    "title": "Common Sense, by Thomas Paine",
-    "notes": "Great fun, and I was totally convinced. American independence was the right move. Paine definitely has an annoying personality though.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-communist-manifesto-by-karl-marx-and-friedrich-engels.jpeg",
-    "title": "The Communist Manifesto, by Karl Marx and Friedrich Engels",
-    "notes": "I was charmed by how capital-R Romantic this was. It has some beautiful (and terrifying) turns of phrase, real blood-thrumming stuff. Shame about everything else.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/frankenstein-by-mary-shelley.jpeg",
-    "title": "Frankenstein, by Mary Shelley",
-    "notes": "I enjoyed this very much. Dragged a little in places – why does Victor always need to take 2 months in bed to process any emotional event? get a grip!! – but that's the Romantics for you.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-social-contract-abridged-by-jean-jacques-rousseau.jpeg",
-    "title": "The Social Contract (abridged), by Jean-Jacques Rousseau",
-    "notes": "Rousseau's ideal state is like a delicate little orchid that could potentially survive for a few weeks under perfect conditions. And I really cannot forgive him for abandoning his five babies to die & then writing a book about how to raise children.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/oliver-vii-by-antal-szerb.jpeg",
-    "title": "Oliver VII, by Antal Szerb",
-    "notes": "Oliver VII, king of a small impoverished European nation, carefully orchestrates a coup against himself, and flees to Venice. While there, he falls in with a group of conmen, who propose a daring scam: for their new friend to impersonate the exiled king. Hilarity ensues.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/wuthering-heights-by-emily-bront.jpeg",
-    "title": "Wuthering Heights, by Emily Brontë",
-    "notes": "The classic female fantasy (a man is obsessed with you) meets the classic English nightmare (your next-door neighbour hates you). A very charismatic novel – readable, lots to contemplate, and lots of lines that would be romantic if they had all been better behaved.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/maintenance-of-everything-part-one-by-stewart-brand.jpeg",
-    "title": "Maintenance: Of Everything: Part One, by Stewart Brand",
-    "notes": "Modern paperbacks are perfect-bound, held together with glue that will melt in the heat if you try to read in a sauna. So if you want to read in the sauna, you need a book that's sewn together. This book is brilliant, and will do the job.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-iliad-by-homer.jpeg",
-    "title": "The Iliad, by Homer",
-    "notes": "I read this aloud in a book club with some friends, over the course of 18 months. It was magnificent. \n\nWe had two other translations for reference, but didn't read them cover-to-cover: in English, nothing can compete with iambic pentameter.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-invisible-life-of-addie-larue-by-v-e-schwab.jpeg",
-    "title": "The Invisible Life of Addie LaRue, by V. E. Schwab",
-    "notes": "Faustian bargain with romantic characteristics. Great book to read on the plane.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/anna-karenina-by-leo-tolstoy.jpeg",
-    "title": "Anna Karenina, by Leo Tolstoy",
-    "notes": "I found the structure of this book somewhat frustrating, but I can't deny it's brilliant. I'm particularly fond of Levin.",
-    "linkURL": "",
-    "linkText": ""
-   }
-  ],
-  "2025": [
-   {
-    "img": "images/gawain-and-the-green-knight-by-gawain-poet.jpeg",
-    "title": "Gawain and the Green Knight, by 'Gawain Poet'",
-    "notes": "Five of us read this poem aloud in one sitting, reading from three separate translations. It was so fun! Charming, funny, festive, and spooky.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/on-friendship-by-michel-montaigne.jpeg",
-    "title": "On Friendship, by Michel Montaigne",
-    "notes": "More like, \"On a single very homoerotically charged friendship.\"",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/meditations-by-marcus-aurelius.jpeg",
-    "title": "Meditations, by Marcus Aurelius",
-    "notes": "A mix of generic good advice and total nonsense. This is a disorganised assortment of fragments, not a coherent book. Mildly interesting but slow going.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/on-the-shortness-of-life-by-seneca.jpeg",
-    "title": "On the Shortness of Life, by Seneca",
-    "notes": "Nicely phrased and I really enjoyed this – some excellent advice, and some bluster. Another Roman philosopher who thinks the best possible use of your time is to be a philosopher; quelle surprise.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/submission-by-michel-houellebecq.jpeg",
-    "title": "Submission, by Michel Houellebecq",
-    "notes": "In the near future, a Muslim party sweeps to power in France. We see society transform (and the women disappear) through the eyes of François, a depressed literature professor specialising in Huysmans. Provocative, amusing, spectacularly French.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/cultish-by-amanda-montell.jpeg",
-    "title": "Cultish, by Amanda Montell",
-    "notes": "Interesting book on how cults, MLMs, and weirdly intense fitness instructors use language to attract and manipulate followers. Pretty superficial (and 3x the length it needs to be) but good fun.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/till-we-have-faces-by-cs-lewis.jpeg",
-    "title": "Till We Have Faces, by CS Lewis",
-    "notes": "The myth of Cupid and Psyche, retold by Psyche's jealous elder sister. A glimpse into the terror, wonder, and monstrous ambiguity of faith, with an uncanny quality that's deeply unnerving. I sometimes felt like I was trespassing by reading it.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/there-are-rivers-in-the-sky-by-elif-shafak.jpeg",
-    "title": "There Are Rivers in the Sky, by Elif Shafak",
-    "notes": "By the banks of the Thames and the Tigris, three lives are connected by water, memory, persecution, and the Epic of Gilgamesh. Beautifully written & lovingly researched – although I'd have liked more Gilgamesh and less dodgy science.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-moonlight-market-by-joanne-harris.jpeg",
-    "title": "The Moonlight Market, by Joanne Harris",
-    "notes": "A fun modern fairytale to read on the plane but extremely repetitive/silly/shallow in places. Mostly feels like it's written for young children – I suppose it's aimed at adult women who mostly read YA/romantasy.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-vegetarian-by-han-kang.jpeg",
-    "title": "The Vegetarian, by Han Kang",
-    "notes": "When Yeong-hye, a dutiful wife, stops eating meat – that is only the beginning of the trouble. This was viscerally unpleasant and disturbing, but strangely fascinating. A volley in the South Korean gender wars. Point to the women.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/weight-by-jeanette-winterson.jpeg",
-    "title": "Weight, by Jeanette Winterson",
-    "notes": "The story of Atlas holding up the world – and Heracles who takes up the burden briefly then tricks Atlas into taking it back. Interesting but shallow. Felt like reading a very long stream-of-consciousness blog post by someone quite self-involved.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-virgin-suicides-by-jeffrey-eugenides.jpeg",
-    "title": "The Virgin Suicides, by Jeffrey Eugenides",
-    "notes": "The neighbourhood boys chronicle their fascination with the five Lisbon sisters: watching the house, generating theories, and obsessively cataloguing stolen items. You can guess what happens to the girls. Read in one day; not sure why.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/letters-to-a-young-poet-by-rainer-maria-rilke.jpeg",
-    "title": "Letters to a Young Poet, by Rainer Maria Rilke",
-    "notes": "Almost every letter in this book opens with an apology for taking so long to write. Extremely charming and intense sequence. I slightly wish I'd read it as a teenager.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/sunrise-on-the-reaping-by-suzanne-collins.jpeg",
-    "title": "Sunrise on the Reaping, by Suzanne Collins",
-    "notes": "This was a Hunger Games book and therefore I loved it. The recurring themes are starting to become overfamiliar, and there's less tension because you know what happens – that's okay, I'll still keep reading that garbage.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/immortality-by-milan-kundera.jpeg",
-    "title": "Immortality, by Milan Kundera",
-    "notes": "Slower going than The Unbearable Lightness of Being (I almost stopped reading!) but in the end I enjoyed it just as much. Long and meandering, too postmodern for my tastes, but full of excellent paragraphs. The Goethe chapters are particularly good.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/a-chess-story-by-stefan-zweig.jpeg",
-    "title": "A Chess Story, by Stefan Zweig",
-    "notes": "It's a story about chess, can't say fairer than that. Hard to say anything else without spoiling it. I liked it.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/journey-by-moonlight-by-antal-szerb.jpeg",
-    "title": "Journey by Moonlight, by Antal Szerb",
-    "notes": "Finding himself restless and agitated on honeymoon in Italy, Mihály makes a series of unexpected decisions driven by fear, neuroticism, and nostalgia for his intense and unconventional teenage friendships. I read this in one day, totally hypnotised, and sat stunned and wounded for hours afterwards.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-pendragon-legend-by-antal-szerb.jpeg",
-    "title": "The Pendragon Legend, by Antal Szerb",
-    "notes": "A young Hungarian scholar visits Britain, where a chance meeting with a Welsh aristocrat draws him into a web of intrigue featuring long-dead alchemists, vengeful ghosts, and a secret dungeon full of axolotls. Extremely amusing.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/triumph-and-disaster-five-historical-miniatures-by-stefan-zweig.jpeg",
-    "title": "Triumph and Disaster: Five Historical Miniatures, by Stefan Zweig",
-    "notes": "Another banger from Zweig. Scott's doomed expedition, the fall of Constantinople to the Ottomans, Lenin's journey to Russia in a sealed train – all excellent bedtime stories for aspiring Great Men of History.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/the-world-of-yesterday-by-stefan-zweig.jpeg",
-    "title": "The World of Yesterday, by Stefan Zweig",
-    "notes": "Heartbreaking elegy for pre-WWI Vienna. Zweig writes very movingly about what was lost in the world wars, and his own statelessness after fleeing Austria.",
-    "linkURL": "",
-    "linkText": ""
-   }
-  ],
   "2024": [
    {
     "img": "images/the-unbearable-lightness-of-being-by-milan-kundera.jpeg",
@@ -246,7 +25,7 @@
    {
     "img": "images/hillbilly-elegy-by-j-d-vance.jpeg",
     "title": "Hillbilly Elegy, by J. D. Vance",
-    "notes": "Vance's story of his difficult upbringing, neatly (& some might say cynically) packaged to support his political career. Makes his case for the importance of stable, loving families, and the value of good networks. Highly readable.",
+    "notes": "Vance's story of his difficult upbringing, neatly (& some might say cynically) packaged to support his political career. Makes his case for the importance of stable, loving families, and the value of good networks. Highly readable.\n",
     "linkURL": "",
     "linkText": ""
    },
@@ -287,7 +66,7 @@
    },
    {
     "img": "images/bruges-la-morte-by-georges-rodenbach.jpeg",
-    "title": "Bruges-la-Morte, by Georges Rodenbach",
+    "title": "Bruges-la-Morte, by Georges Rodenbach ",
     "notes": "A melancholy portrait of grief & obsession in a dead city. First published 1892 & thought to be the first work of fiction illustrated with photographs. Completely mesmerising: I read it in 2 days.",
     "linkURL": "",
     "linkText": ""
@@ -295,7 +74,228 @@
    {
     "img": "images/cleopatra-and-frankenstein-by-coco-mellors.jpeg",
     "title": "Cleopatra and Frankenstein, by Coco Mellors",
-    "notes": "An impulsive marriage fractures and disintegrates. Vibey & interesting throughout but it didn't hit like I wanted it to.",
+    "notes": "An impulsive marriage fractures and disintegrates. Vibey & interesting throughout but it didn't hit like I wanted it to.\n",
+    "linkURL": "",
+    "linkText": ""
+   }
+  ],
+  "2025": [
+   {
+    "img": "images/gawain-and-the-green-knight-by-gawain-poet.jpeg",
+    "title": "Gawain and the Green Knight, by 'Gawain Poet'",
+    "notes": "Five of us read this poem aloud in one sitting, reading from three separate translations. It was so fun! Charming, funny, festive, and spooky.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/on-friendship-by-michel-montaigne.jpeg",
+    "title": "On Friendship, by Michel Montaigne",
+    "notes": "More like, \"On a single very homoerotically charged friendship.\" ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/meditations-by-marcus-aurelius.jpeg",
+    "title": "Meditations, by Marcus Aurelius",
+    "notes": "A mix of generic good advice and total nonsense. This is a disorganised assortment of fragments, not a coherent book. Mildly interesting but slow going. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/on-the-shortness-of-life-by-seneca.jpeg",
+    "title": "On the Shortness of Life, by Seneca",
+    "notes": "Nicely phrased and I really enjoyed this – some excellent advice, and some bluster. Another Roman philosopher who thinks the best possible use of your time is to be a philosopher; quelle surprise.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/submission-by-michel-houellebecq.jpeg",
+    "title": "Submission, by Michel Houellebecq",
+    "notes": "In the near future, a Muslim party sweeps to power in France. We see society transform (and the women disappear) through the eyes of François, a depressed literature professor specialising in Huysmans. Provocative, amusing, spectacularly French.\n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/cultish-by-amanda-montell.jpeg",
+    "title": "Cultish, by Amanda Montell",
+    "notes": "Interesting book on how cults, MLMs, and weirdly intense fitness instructors use language to attract and manipulate followers. Pretty superficial (and 3x the length it needs to be) but good fun.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/till-we-have-faces-by-cs-lewis.jpeg",
+    "title": "Till We Have Faces, by CS Lewis",
+    "notes": "The myth of Cupid and Psyche, retold by Psyche's jealous elder sister. A glimpse into the terror, wonder, and monstrous ambiguity of faith, with an uncanny quality that's deeply unnerving. I sometimes felt like I was trespassing by reading it.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/there-are-rivers-in-the-sky-by-elif-shafak.jpeg",
+    "title": "There Are Rivers in the Sky, by Elif Shafak",
+    "notes": "By the banks of the Thames and the Tigris, three lives are connected by water, memory, persecution, and the Epic of Gilgamesh. Beautifully written & lovingly researched – although I'd have liked more Gilgamesh and less dodgy science.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-moonlight-market-by-joanne-harris.jpeg",
+    "title": "The Moonlight Market, by Joanne Harris",
+    "notes": "A fun modern fairytale to read on the plane but extremely repetitive/silly/shallow in places. Mostly feels like it's written for young children – I suppose it's aimed at adult women who mostly read YA/romantasy.\n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-vegetarian-by-han-kang.jpeg",
+    "title": "The Vegetarian, by Han Kang",
+    "notes": "When Yeong-hye, a dutiful wife, stops eating meat – that is only the beginning of the trouble. This was viscerally unpleasant and disturbing, but strangely fascinating. A volley in the South Korean gender wars. Point to the women.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/weight-by-jeanette-winterson.jpeg",
+    "title": "Weight, by Jeanette Winterson",
+    "notes": "The story of Atlas holding up the world – and Heracles who takes up the burden briefly then tricks Atlas into taking it back. Interesting but shallow. Felt like reading a very long stream-of-consciousness blog post by someone quite self-involved.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-virgin-suicides-by-jeffrey-eugenides.jpeg",
+    "title": "The Virgin Suicides, by Jeffrey Eugenides",
+    "notes": "The neighbourhood boys chronicle their fascination with the five Lisbon sisters: watching the house, generating theories, and obsessively cataloguing stolen items. You can guess what happens to the girls. Read in one day; not sure why.\n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/letters-to-a-young-poet-by-rainer-maria-rilke.jpeg",
+    "title": "Letters to a Young Poet, by Rainer Maria Rilke",
+    "notes": "Almost every letter in this book opens with an apology for taking so long to write. Extremely charming and intense sequence. I slightly wish I'd read it as a teenager.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/sunrise-on-the-reaping-by-suzanne-collins.jpeg",
+    "title": "Sunrise on the Reaping, by Suzanne Collins",
+    "notes": "This was a Hunger Games book and therefore I loved it. The recurring themes are starting to become overfamiliar, and there's less tension because you know what happens – that's okay, I'll still keep reading that garbage.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/immortality-by-milan-kundera.jpeg",
+    "title": "Immortality, by Milan Kundera",
+    "notes": "Slower going than The Unbearable Lightness of Being (I almost stopped reading!) but in the end I enjoyed it just as much. Long and meandering, too postmodern for my tastes, but full of excellent paragraphs. The Goethe chapters are particularly good.\n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/a-chess-story-by-stefan-zweig.jpeg",
+    "title": "A Chess Story, by Stefan Zweig",
+    "notes": "It's a story about chess, can't say fairer than that. Hard to say anything else without spoiling it. I liked it.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/journey-by-moonlight-by-antal-szerb.jpeg",
+    "title": "Journey by Moonlight, by Antal Szerb",
+    "notes": "Finding himself restless and agitated on honeymoon in Italy, Mihály makes a series of unexpected decisions driven by fear, neuroticism, and nostalgia for his intense and unconventional teenage friendships. I read this in one day, totally hypnotised, and sat stunned and wounded for hours afterwards. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-pendragon-legend-by-antal-szerb.jpeg",
+    "title": "The Pendragon Legend, by Antal Szerb",
+    "notes": "A young Hungarian scholar visits Britain, where a chance meeting with a Welsh aristocrat draws him into a web of intrigue featuring long-dead alchemists, vengeful ghosts, and a secret dungeon full of axolotls. Extremely amusing.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/triumph-and-disaster-five-historical-miniatures-by-stefan-zweig.jpeg",
+    "title": "Triumph and Disaster: Five Historical Miniatures, by Stefan Zweig",
+    "notes": "Another banger from Zweig. Scott's doomed expedition, the fall of Constantinople to the Ottomans, Lenin's journey to Russia in a sealed train – all excellent bedtime stories for aspiring Great Men of History.\n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-world-of-yesterday-by-stefan-zweig.jpeg",
+    "title": "The World of Yesterday, by Stefan Zweig",
+    "notes": "Heartbreaking elegy for pre-WWI Vienna. Zweig writes very movingly about what was lost in the world wars, and his own statelessness after fleeing Austria. \n",
+    "linkURL": "",
+    "linkText": ""
+   }
+  ],
+  "2026": [
+   {
+    "img": "images/the-christians-and-the-fall-of-rome-by-edward-gibbon.jpeg",
+    "title": "The Christians and the Fall of Rome, by Edward Gibbon",
+    "notes": "Abridged edition of The Decline and Fall of the Roman Empire. Amusing book, teetering on the edge of a secular worldview. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/common-sense-by-thomas-paine.jpeg",
+    "title": "Common Sense, by Thomas Paine",
+    "notes": "Great fun, and I was totally convinced. American independence was the right move. Paine definitely has an annoying personality though.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-communist-manifesto-by-karl-marx-and-friedrich-engels.jpeg",
+    "title": "The Communist Manifesto, by Karl Marx and Friedrich Engels",
+    "notes": "I was charmed by how capital-R Romantic this was. It has some beautiful (and terrifying) turns of phrase, real blood-thrumming stuff. Shame about everything else. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/frankenstein-by-mary-shelley.jpeg",
+    "title": "Frankenstein, by Mary Shelley",
+    "notes": "I enjoyed this very much. Dragged a little in places – why does Victor always need to take 2 months in bed to process any emotional event? get a grip!! – but that's the Romantics for you.\n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-social-contract-abridged-by-jean-jacques-rousseau.jpeg",
+    "title": "The Social Contract (abridged), by Jean-Jacques Rousseau",
+    "notes": "Rousseau's ideal state is like a delicate little orchid that could potentially survive for a few weeks under perfect conditions. And I really cannot forgive him for abandoning his five babies to die & then writing a book about how to raise children.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/oliver-vii-by-antal-szerb.jpeg",
+    "title": "Oliver VII, by Antal Szerb",
+    "notes": "Oliver VII, king of a small impoverished European nation, carefully orchestrates a coup against himself, and flees to Venice. While there, he falls in with a group of conmen, who propose a daring scam: for their new friend to impersonate the exiled king. Hilarity ensues.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/wuthering-heights-by-emily-bront.jpeg",
+    "title": "Wuthering Heights, by Emily Brontë",
+    "notes": "The classic female fantasy (a man is obsessed with you) meets the classic English nightmare (your next-door neighbour hates you). A very charismatic novel – readable, lots to contemplate, and lots of lines that would be romantic if they had all been better behaved. \n",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/maintenance-of-everything-part-one-by-stewart-brand.jpeg",
+    "title": "Maintenance: Of Everything: Part One, by Stewart Brand",
+    "notes": "Modern paperbacks are perfect-bound, held together with glue that will melt in the heat if you try to read in a sauna. So if you want to read in the sauna, you need a book that's sewn together. This book is brilliant, and will do the job. ",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-iliad-by-homer.jpeg",
+    "title": "The Iliad, by Homer",
+    "notes": "I read this aloud in a book club with some friends, over the course of 18 months. It was magnificent. \n\nWe had two other translations for reference, but didn't read them cover-to-cover: in English, nothing can compete with iambic pentameter.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/the-invisible-life-of-addie-larue-by-v-e-schwab.jpeg",
+    "title": "The Invisible Life of Addie LaRue, by V. E. Schwab",
+    "notes": "Faustian bargain with romantic characteristics. Great book to read on the plane.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
+    "img": "images/anna-karenina-by-leo-tolstoy.jpeg",
+    "title": "Anna Karenina, by Leo Tolstoy",
+    "notes": "I found the structure of this book somewhat frustrating, but I can't deny it's brilliant. I'm particularly fond of Levin.",
     "linkURL": "",
     "linkText": ""
    }
