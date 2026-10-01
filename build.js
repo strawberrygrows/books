@@ -19,9 +19,7 @@ const VIEWS = [
   { key: '2026', table: 'Books read', view: '2026' },
   { key: '2025', table: 'Books read', view: '2025' },
   { key: '2024', table: 'Books read', view: '2024' },
-  // Recs parked until the content is ready — uncomment to resurrect
-  // (also uncomment the Recs tab button in index.html):
-  // { key: 'recs', table: 'Books read', view: 'Recommended' },
+  { key: 'recs', table: 'Books read', view: 'Recommended' },
 ];
 
 // ---- Fetch Airtable records ----
