@@ -223,6 +223,13 @@
   ],
   "2026": [
    {
+    "img": "images/in-memoriam-by-alfred-lord-tennyson.jpeg",
+    "title": "In Memoriam, by Alfred, Lord Tennyson",
+    "notes": "This is a marvellous poem: vulnerable, tender, ambitious. It gives voice to an age where people were struggling to reconcile their deeply-felt Christian faith with new scientific discoveries. This was also the first serious literary criticism I've read in years; some very interesting essays here.",
+    "linkURL": "",
+    "linkText": ""
+   },
+   {
     "img": "images/a-martin-s-guide-to-budapest-by-antal-szerb.jpeg",
     "title": "A Martin's Guide to Budapest, by Antal Szerb",
     "notes": "Charming little book about Budapest streets. ",
@@ -344,13 +351,6 @@
     "linkText": ""
    },
    {
-    "img": "",
-    "title": "Against Nature, by Joris-Karl Huysmans",
-    "notes": "Authentic decadence turns out to be fairly repetitive and involve a lot of shopping. Nonetheless, this book is extraordinarily funny and charming. ",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
     "img": "images/till-we-have-faces-by-cs-lewis.jpeg",
     "title": "Till We Have Faces, by CS Lewis",
     "notes": "The myth of Cupid and Psyche, retold by Psyche's jealous elder sister. A glimpse into the terror, wonder, and monstrous ambiguity of faith, with an uncanny quality that's deeply unnerving. I sometimes felt like I was trespassing by reading it.",
@@ -368,20 +368,6 @@
     "img": "images/journey-by-moonlight-by-antal-szerb.jpeg",
     "title": "Journey by Moonlight, by Antal Szerb",
     "notes": "Finding himself restless and agitated on honeymoon in Italy, Mihály makes a series of unexpected decisions driven by fear, neuroticism, and nostalgia for his intense and unconventional teenage friendships. I read this in one day, totally hypnotised, and sat stunned and wounded for hours afterwards. ",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "",
-    "title": "The Hare With Amber Eyes, by Edmund de Waal",
-    "notes": "This book changed the way I think about beauty - for the better.",
-    "linkURL": "",
-    "linkText": ""
-   },
-   {
-    "img": "images/tomorrow-and-tomorrow-and-tomorrow-by-gabrielle-zevin.jpeg",
-    "title": "Tomorrow and Tomorrow and Tomorrow, by Gabrielle Zevin",
-    "notes": "A shockingly good book about video games, friendship, and things going wrong. Tried to read it in the living room on holiday, but started crying and had to exile myself.",
     "linkURL": "",
     "linkText": ""
    },
