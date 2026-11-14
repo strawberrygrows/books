@@ -466,3 +466,97 @@ a:hover {
         columns: 2;
     }
 }
+
+/* ── SIDEBAR LAYOUT (homepage) ── */
+
+.home-container.v40 {
+    max-width: 840px;
+    padding: 56px 40px 100px;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    column-gap: 64px;
+    align-items: start;
+}
+
+.v40 .masthead {
+    display: block;
+    position: sticky;
+    top: 56px;
+    margin: 0;
+}
+
+.v40 .masthead h1 {
+    font-size: 27px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.v40 .sidebar-photo .about-photo { flex: none; }
+.v40 .sidebar-photo img { width: 100%; }
+.v40 .sidebar-photo .caption { text-align: left; }
+.v40 .sidebar-photo .social-links { justify-content: flex-start; gap: 12px; margin-top: 10px; }
+.v40 .sidebar-photo .social-links svg { width: 13px; height: 13px; }
+
+.v40 .site-nav {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 26px;
+    font-size: 14px;
+}
+.v40 .site-nav a { color: var(--accent); }
+.v40 .site-nav a:hover { color: var(--ink); }
+.v40 .site-nav a.active { color: var(--ink); font-weight: 500; }
+
+.v40 .content { min-width: 0; }
+
+/* first section sits flush with the name, like the reference */
+.v40 .view > .home-section:first-child { border-top: none; padding-top: 4px; }
+.v40 #view-books { padding-top: 4px; }
+
+.v40 .home-section p,
+.v40 .intro-text,
+.v40 .home-section li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a4a46;
+}
+
+.v40 .intro-text a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.v40 .intro-text a:hover { text-decoration: underline; }
+
+.v40 .home-section h2 {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-weight: 600;
+    color: #393936;
+}
+
+.v40 .writing-title { font-size: 15px; }
+.v40 .writing-note { font-size: 12.5px; }
+
+@media (max-width: 760px) {
+    .home-container.v40 {
+        display: block;
+        padding: 24px 20px 60px;
+    }
+    .v40 .masthead {
+        position: static;
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        column-gap: 18px;
+        align-items: start;
+        margin-bottom: 28px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--rule);
+    }
+    .v40 .masthead h1 { grid-column: 2; grid-row: 1; margin-bottom: 8px; font-size: 24px; }
+    .v40 .sidebar-photo, .v40 .sidebar-photo .about-photo { display: contents; }
+    .v40 .sidebar-photo img { grid-column: 1; grid-row: 1 / span 3; }
+    .v40 .sidebar-photo .caption { display: none; }
+    .v40 .sidebar-photo .social-links { grid-column: 2; grid-row: 3; gap: 12px; margin-top: 14px; }
+    .v40 .site-nav { grid-column: 2; grid-row: 2; flex-direction: row; flex-wrap: wrap; gap: 4px 14px; margin-top: 0; }
+}
