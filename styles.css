@@ -491,7 +491,7 @@ a:hover {
 }
 .v40 .site-nav a { color: var(--accent); }
 .v40 .site-nav a:hover { color: var(--ink); }
-.v40 .site-nav a.active { color: var(--ink); font-weight: 500; }
+.v40 .site-nav a.active { color: var(--ink); }
 
 .v40 .content { min-width: 0; }
 
