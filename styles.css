@@ -118,7 +118,9 @@ a:hover {
 }
 
 .site-nav a.active {
-    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--muted);
+    text-underline-offset: 4px;
 }
 
 /* ── VIEWS ── */
@@ -388,28 +390,12 @@ a:hover {
     gap: 14px;
 }
 
-/* Recs: a single-column reading list of text-only recommendations */
-.rec-row {
-    border-bottom: 1px solid var(--rule);
-    padding: 18px 0;
+/* Recs: calls-to-action style entries, with paragraph breaks preserved */
+.recs-list .writing-item {
+    margin-bottom: 18px;
 }
 
-.rec-row:last-child {
-    border-bottom: none;
-}
-
-.rec-title {
-    font-family: var(--font-prose);
-    font-size: 14.5px;
-    color: var(--ink);
-    margin-bottom: 6px;
-}
-
-.rec-notes {
-    font-family: var(--font-prose);
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: var(--muted);
+.recs-list .writing-note {
     white-space: pre-line;
 }
 

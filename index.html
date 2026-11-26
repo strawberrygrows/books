@@ -209,13 +209,13 @@
         '</div>';
     }
 
-    // Recs are text-only mini-essays: one column, title then full-width note
+    // Recs match the calls-to-action layout: writing-item entries
     function recsHTML(books) {
         return '<div class="recs-list">' +
             books.map(b =>
-                `<div class="rec-row">` +
-                `<div class="rec-title">${escHtml(b.title)}</div>` +
-                (b.notes ? `<div class="rec-notes">${escHtml(b.notes.trim())}</div>` : '') +
+                `<div class="writing-item">` +
+                `<div class="writing-title">${escHtml(b.title)}</div>` +
+                (b.notes ? `<div class="writing-note">${escHtml(b.notes.trim())}</div>` : '') +
                 `</div>`
             ).join('') +
         '</div>';
